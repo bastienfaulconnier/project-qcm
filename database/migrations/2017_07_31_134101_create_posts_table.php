@@ -16,13 +16,13 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 100);
-            $table->string('abstract', 100)
+            $table->text('abstract')
                   ->nullable();
-            $table->string('content', 100)
+            $table->text('content')
                   ->nullable();
             $table->string('url_thumbnail')
                   ->nullable();
-            $table->date('date');
+            $table->timestamp('date');
             $table->enum('status', ['published', 'unpublished'])
                   ->default('published');
             $table->unsignedInteger('user_id')
