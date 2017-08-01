@@ -13,13 +13,12 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 100);
             $table->string('abstract', 100)
                   ->nullable();
-            $table->string('content',100)
+            $table->string('content', 100)
                   ->nullable();
             $table->string('url_thumbnail')
                   ->nullable();
@@ -31,7 +30,7 @@ class CreatePostsTable extends Migration
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
-                  ->onDelete('DET NULL');
+                  ->onDelete('SET NULL');
             $table->timestamps();
         });
     }
