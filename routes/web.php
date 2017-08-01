@@ -11,19 +11,21 @@
 |
 */
 
-/* Route::get('/', function () {
+ Route::get('/', function () {
     return view('welcome');
-}); */
+}); 
 
-Route::get('/', 'FrontController@index')->name('home'); // route('home') // construit l'url  
 
+/* Front */
+/* Route::get('/', 'FrontController@index')->name('home');
 Route::get('/posts/{id}','FrontController@showPost');
 Route::get('/contact', 'FrontController@showContact');
 Route::get('/mentionslegales', 'FrontController@showLegalNotice');
-Route::get('/lycee', 'FrontController@showmegaLycee');
+Route::get('/lycee', 'FrontController@showLycee'); */
 
-Route::any('login', 'Admin\LoginController@login')->name('login');
-Route::get('logout', 'Admin\LoginController@logout')->name('logout');
+/* Auth */
+/* Route::any('login', 'Admin\LoginController@login') ->name('login');
+Route::get('logout', 'Admin\LoginController@logout') ->name('logout'); */
 
 /* Back Profs */
 /* Route::group(['middleware' => 'auth'], function(){
