@@ -15,8 +15,7 @@ class FrontController extends Controller
 
     //
     public function index() {
-        $posts = Post::with('post', 'user')->published();
-
+        
         $posts = Post::all();
 
         return view('front.home', compact('post','user'));
