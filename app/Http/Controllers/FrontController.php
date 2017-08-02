@@ -16,7 +16,7 @@ class FrontController extends Controller
     //
     public function index() {
         
-        $posts = Post::all()->where('status', '=', 'published');
+        $posts = Post::all()->where('status', '=', 'published')->orderBy('date', 'desc')->limit(5);
 
         return view('front.home', compact('posts'));
     }
