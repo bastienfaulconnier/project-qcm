@@ -14,7 +14,7 @@
 				<h4>{{$post->title}}</h4>
 				<p>
 					{{$post->abstract}}
-					<a href="#">Lire la suite</a>
+					<a href="{{url('posts', $post->id)}}">Lire la suite</a>
 				</p>
 				<span>{{$post->status}}</span>
 			</div>

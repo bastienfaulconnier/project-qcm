@@ -21,10 +21,16 @@ class FrontController extends Controller
         return view('front.home', compact('posts'));
     }
 
-    public function showPosts() {
+    public function showAllPosts() {
         $posts = Post::where('status', '=', 'published')->orderBy('date', 'desc')->get();
         
         return view('front.posts', compact('posts'));
+    }
+
+    public function showPost(int $id) {
+        $post = Post::findOrFail($id);
+
+        return view('front.single', compact('post'));
     }
 
     /*
