@@ -11,10 +11,6 @@
 |
 */
 
- Route::get('/', function () {
-    return view('welcome');
-}); 
-
 
 /* Front */
 /* Route::get('/', 'FrontController@index')->name('home');
