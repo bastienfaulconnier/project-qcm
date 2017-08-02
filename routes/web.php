@@ -11,13 +11,12 @@
 |
 */
 
-
 /* Front */
-/* Route::get('/', 'FrontController@index')->name('home');
-Route::get('/posts/{id}','FrontController@showPost');
+Route::get('/', 'FrontController@index')->name('home');
+/* Route::get('/posts/{id}','FrontController@showPost');
 Route::get('/contact', 'FrontController@showContact');
 Route::get('/mentionslegales', 'FrontController@showLegalNotice');
-Route::get('/lycee', 'FrontController@showLycee'); */
+Route::get('/lycee', 'FrontController@showLycee');  */
 
 /* Auth */
 /* Route::any('login', 'Admin\LoginController@login') ->name('login');
