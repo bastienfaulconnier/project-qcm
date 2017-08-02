@@ -13,6 +13,7 @@
 
 /* Front */
 Route::get('/', 'FrontController@index')->name('home');
+Route::get('/posts', 'FrontController@showPosts');
 /* Route::get('/posts/{id}','FrontController@showPost');
 Route::get('/contact', 'FrontController@showContact');
 Route::get('/mentionslegales', 'FrontController@showLegalNotice');

@@ -22,7 +22,7 @@ class FrontController extends Controller
     }
 
     public function showPosts() {
-        $posts = Post::all()->orderBy('date', 'desc');
+        $posts = Post::where('status', '=', 'published')->orderBy('date', 'desc')->get();
         
         return view('front.posts', compact('posts'));
     }
