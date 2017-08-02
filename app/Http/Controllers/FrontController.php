@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Post;
-use App\User;
 use DB;
+use App\User;
+use App\Post;
+use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
@@ -16,9 +16,9 @@ class FrontController extends Controller
     //
     public function index() {
         
-        $posts = Post::all();
+        $posts = Post::all()->where('status', '=', 'published');
 
-        return view('front.home', compact('post','user'));
+        return view('front.home', compact('posts'));
     }
 
     public function showPost(int $id) {
@@ -27,6 +27,7 @@ class FrontController extends Controller
         return view('front.single', compact('post', 'user'));
     }
 
+    /*
     public function showContact() {
         return view('front.contact');
     }
@@ -38,4 +39,5 @@ class FrontController extends Controller
     public function showLycee() {
         return view('front.lycee');
     }
+    */
 }
