@@ -33,7 +33,7 @@ class FrontController extends Controller
         return view('front.single', compact('post'));
     }
 
-    /*
+    
     public function showContact() {
         return view('front.contact');
     }
@@ -45,5 +45,5 @@ class FrontController extends Controller
     public function showLycee() {
         return view('front.lycee');
     }
-    */
+    
 }
