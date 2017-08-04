@@ -16,11 +16,11 @@
 </head>
 
 <body>
-	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
+	<div id="wrap">
 		@include('partials.back.teacher.nav')
 		
-		<div class="content" style="width:1200px; margin:0 auto">
-			<div class="left" style="width:70%; float:left;">
+		<div class="content">
+			<div>
 				@yield('content')
 			</div>
 
