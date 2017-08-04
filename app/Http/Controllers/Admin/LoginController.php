@@ -21,6 +21,7 @@ class LoginController extends Controller
     				'password.required' => 'le mot de passe est obligatoire'
     		]);
 
+
     		if(Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
 				session()->flash('message', 'Bienvenu dans le dashboard');
 
