@@ -16,8 +16,28 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 	<div id="wrap">
+=======
+	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
+		<nav>
+			<ul>
+				<li>
+					<a href="{{route('home')}}">Accueil</a>
+				</li>
+				<li>
+					<a href="{{route('logout')}}">Se déconnecter</a>
+				</li>
+				<li>
+					<a href="{{url('dashboard')}}">Dashboard</a>
+				</li>
+			</ul>
+		</nav>
+
+>>>>>>> 0757db8532fe35b0b437732412f6d0015ef5a975
 		@include('partials.back.teacher.nav')
+
+		@include('partials.flash')
 		
 		<div class="content">
 			<div>
