@@ -10,7 +10,7 @@ Route::get('/posts/{id}','FrontController@showPost');
 
 /* Auth */
 Route::any('login', 'Admin\LoginController@login') ->name('login');
-# Route::get('logout', 'Admin\LoginController@logout') ->name('logout');
+Route::get('logout', 'Admin\LoginController@logout') ->name('logout');
 
 /* Back */
 Route::group(['middleware' => 'auth'], function() {

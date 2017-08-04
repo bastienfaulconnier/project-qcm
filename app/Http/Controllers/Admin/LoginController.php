@@ -37,4 +37,12 @@ class LoginController extends Controller
 
     	return view('auth.login');
     }
+
+    public function logout() {
+    	auth()->logout();
+
+    	session()->flash('message', 'Merci de votre visite.');
+
+    	return redirect()->home();
+    }
 }
