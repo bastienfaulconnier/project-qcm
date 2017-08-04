@@ -1,1 +1,1 @@
-<p>super test</p>
+<a href="#">Contact</a> | <a href="#">Mentions Legales</a>
