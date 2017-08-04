@@ -17,7 +17,23 @@
 
 <body>
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
+		<nav>
+			<ul>
+				<li>
+					<a href="{{route('home')}}">Accueil</a>
+				</li>
+				<li>
+					<a href="{{route('logout')}}">Se déconnecter</a>
+				</li>
+				<li>
+					<a href="{{url('dashboard')}}">Dashboard</a>
+				</li>
+			</ul>
+		</nav>
+
 		@include('partials.back.teacher.nav')
+
+		@include('partials.flash')
 		
 		<div class="content" style="width:1200px; margin:0 auto">
 			<div class="left" style="width:70%; float:left;">
