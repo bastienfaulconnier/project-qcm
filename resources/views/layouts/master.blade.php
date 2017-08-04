@@ -8,7 +8,7 @@
 
 <body>
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
-		@include('partials.nav')
+		@include('partials.front.nav')
 
 		@include('partials.flash')
 		
@@ -25,7 +25,7 @@
 			@show
 		</div>
 
-		@include('partials.footer')
+		@include('partials.front.footer')
 	</div>
 </body>
 </html>
