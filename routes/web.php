@@ -12,9 +12,14 @@ Route::get('/lycee', 'FrontController@showLycee');
 Route::any('login', 'Admin\LoginController@login') ->name('login');
 Route::get('logout', 'Admin\LoginController@logout') ->name('logout');
 
-/* Back */
-Route::group(['middleware' => 'auth'], function() {
-	Route::get('dashboard', 'Admin\DashboardController@index');
+/* Back : Teacher */
+Route::namespace('Admin/Teacher')->prefix('teacher')->middleware(['auth', 'role:teacher'])->group(function() {
+	Route::get('dashboard', 'Admin\Teacher\DashboardController@index')->name('teacher/home');
+});
+
+/* Back : Student */
+Route::namespace('Admin/Student')->prefix('student')->middleware(['auth', 'role:student'])->group(function() {
+	Route::get('dashboard', 'Admin\Student\DashboardController@index')->name('student/home');
 });
 
 /* Back Profs */

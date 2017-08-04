@@ -11,7 +11,6 @@ class LoginController extends Controller
 {
     public function login(Request $request) {
     	if($request->isMethod('post')) {
-
     		$this->validate($request, [
     				'username'		=> 'bail|required',
     				'password'  => 'required|between:3,10',
@@ -22,12 +21,10 @@ class LoginController extends Controller
     				'password.required' => 'le mot de passe est obligatoire'
     		]);
 
-    		if(Auth::attempt([
-    			'username' => $request->username, 'password' => $request->password])) {
+    		if(Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+				session()->flash('message', 'Bienvenu dans le dashboard');
 
-    				session()->flash('message', 'Bienvenu dans le dashboard');
-
-    				return redirect()->intended('dashboard');
+				return redirect()->intended('dashboard');
     		}
 
     		session()->flash('message', 'Mot de passe ou username invalide');
