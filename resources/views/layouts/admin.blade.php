@@ -17,22 +17,22 @@
 
 <body>
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
-		@include('partials.nav')
+		@include('partials.back.teacher.nav')
 		
 		<div class="content" style="width:1200px; margin:0 auto">
 			<div class="left" style="width:70%; float:left;">
 				@yield('content')
 			</div>
 
-			@section('sidebar')
+			{{--  @section('sidebar')
 				<div class="right" style="width:30%; float:right;">
 					Ici c'est la sidebar. Twitter and co.	
 					
 				</div>
-			@show
+			@show  --}}
 		</div>
 
-		@include('partials.footer')
+		@include('partials.back.footer')
 	</div>
 </body>
 </html>
