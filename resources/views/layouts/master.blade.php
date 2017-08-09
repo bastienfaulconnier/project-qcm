@@ -15,12 +15,12 @@
 				@yield('content')
 			</div>
 
-			{{--  @section('sidebar')
+			@section('sidebar')
 				<div class="right" style="width:20%; float:right;">
 					Ici c'est la sidebar. Twitter and co.	
 					
 				</div>
-			@show  --}}
+			@show
 		</div>
 
 		@include('partials.front.footer')
