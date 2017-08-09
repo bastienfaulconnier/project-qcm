@@ -23,9 +23,20 @@ class LoginController extends Controller
 
 
     		if(Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
-				session()->flash('message', 'Bienvenu dans le dashboard');
+				session()->flash('message', 'Bienvenue dans le dashboard');
 
-				return redirect()->intended('dashboard');
+                if(Auth::user()->role = 'teacher') {
+
+                    return redirect()->route('teacher/home');
+                }
+                elseif (Auth::user()->role = 'student') {
+
+                    return redirect()->route('student/home');
+                }
+                else {
+
+                    return redirect()->route('home');
+                }
     		}
 
     		session()->flash('message', 'Mot de passe ou username invalide');

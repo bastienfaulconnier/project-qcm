@@ -9,8 +9,6 @@
 <body>
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
 		@include('partials.front.nav')
-
-		@include('partials.flash')
 		
 		<div class="content" style="width:1200px; margin:0 auto; overflow:auto;">
 			<div class="left" style="width:70%; float:left;">

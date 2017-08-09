@@ -20,7 +20,7 @@ Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:
 
 
 /* Back : Student */
-Route::namespace('Admin\Student')->prefix('student')->middleware(['auth', 'role:student'])->group(function() {
+Route::namespace('Admin\Student')->prefix('student')->middleware(['auth', 'role'])->group(function() {
 	Route::get('dashboard', 'DashboardController@index')->name('student/home');
 });
 

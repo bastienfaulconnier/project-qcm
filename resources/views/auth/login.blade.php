@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@include('partials.flash')
+
 @section('content')
 
     <form action="{{url('login')}}" method="POST">

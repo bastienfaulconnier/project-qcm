@@ -30,7 +30,7 @@
 				</li>
 			</ul>
 		</nav>
-
+		
 		@include('partials.back.teacher.nav')
 
 		@include('partials.flash')
