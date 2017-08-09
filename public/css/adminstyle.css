@@ -1,13 +1,22 @@
-header, main, footer {
+header, body, footer {
     padding-left: 300px;
+}
+
+nav {
+    background-color: #1b5e20 ; 
+}
+
+.content {
+    padding: 15px;
 }
 
 .user-view p {
     color:white;
 }
 
+
 @media only screen and (max-width : 992px) {
-    header, main, footer {
+    header, body, footer {
     padding-left: 0;
     }
 }

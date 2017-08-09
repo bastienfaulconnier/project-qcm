@@ -20,61 +20,34 @@
 </head>
 
 <body>
-	<main>
-		<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
-			<nav>
-				<ul>
-					<li>
-						<a href="{{route('logout')}}">Retour au site</a>
-					</li>
-				</ul>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li>
-						{{--  <a href="{{route('home')}}">Accueil</a>  --}}
-						<p>Bonjour, admin</p>
-					</li>
-					<li>
-						<a href="{{url('dashboard')}}">Dashboard</a>
-					</li>
-				</ul>
-			</nav>
+	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
+		<nav>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
 
-			<ul id="mav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
-				<li><div class="user-view">			
-					<div class="background">
-						<img src="{{ URL::asset('img/maths.jpg') }}">
-					</div>
-					<p><strong>Bonjour, admin</strong></p>
-      				<p>Bonne journée !</p>
-				</div></li>
-    			<li><a class="waves-effect" href="#!">Dashboard</a></li>
-    			<li><a class="waves-effect" href="#!">Fiches</a></li>
-    			<li><a class="waves-effect" href="#!">Articles</a></li>				
-    			<li><a class="waves-effect" href="#!">Commentaires</a></li>				
-    			<li><a class="waves-effect" href="#!">Pages</a></li>				
-    			<li><a class="waves-effect" href="#!">Élèves</a></li>				
+				<li>
+					<a href="{{route('logout')}}">Retour au site</a>
+				</li>
 			</ul>
-			<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-			
-			@include('partials.back.teacher.nav')
+		</nav>
+		
+		@include('partials.back.teacher.nav')
 
-			@include('partials.flash')
-			
-			<div class="content">
-				<div>
-					@yield('content')
-				</div>
-
-				{{--  @section('sidebar')
-					<div class="right" style="width:30%; float:right;">
-						Ici c'est la sidebar. Twitter and co.	
-						
-					</div>
-				@show  --}}
+		@include('partials.flash')
+		
+		<div class="content">
+			<div>
+				@yield('content')
 			</div>
 
-			@include('partials.back.footer')
+			{{--  @section('sidebar')
+				<div class="right" style="width:30%; float:right;">
+					Ici c'est la sidebar. Twitter and co.	
+					
+				</div>
+			@show  --}}
 		</div>
-	</main>
+
+		@include('partials.back.footer')
+	</div>
 </body>
 </html>
