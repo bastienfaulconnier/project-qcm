@@ -16,9 +16,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-	<div id="wrap">
-=======
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
 		<nav>
 			<ul>
@@ -34,7 +31,6 @@
 			</ul>
 		</nav>
 
->>>>>>> 0757db8532fe35b0b437732412f6d0015ef5a975
 		@include('partials.back.teacher.nav')
 
 		@include('partials.flash')
