@@ -14,6 +14,9 @@
 	{{--  CSS local  --}}
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/adminstyle.css') }}">
 
+	{{-- JS local --}}
+	{{--  <script src="{{ URL::asset('js/admin.js') }}">  --}}
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Math Back-Office</title>
@@ -25,7 +28,7 @@
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 
 				<li>
-					<a href="{{route('logout')}}">Retour au site</a>
+					<a href="{{route('logout')}}">Se déconnecter</a>
 				</li>
 			</ul>
 		</nav>

@@ -8,13 +8,10 @@
             <div class="card-content white-text">
               <span class="card-title">3 articles</span>
               @forelse($posts as $post)
-            <a href="#"><p> {{$post->title}} </p></a>
-           @empty
-           <p>Vide.</p>
-           @endforelse
-              {{--  <a href="#"><p>{{}}</p></a>
-              <a href="#"><p>Article #2</p></a>
-              <a href="#"><p>Article #3</p></a>  --}}
+                <a href="#"><p> {{$post->title}} </p></a>
+              @empty
+              <p>Vide.</p>
+              @endforelse
             </div>
             <div class="card-action">
               <a href="#">Voir tous les articles</a>
