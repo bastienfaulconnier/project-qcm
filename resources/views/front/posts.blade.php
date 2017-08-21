@@ -1,26 +1,36 @@
 @extends('layouts.master')
 
-<h2>Touts les POSTS !</h2>
-
 @section('content')
 	
-	@forelse ($posts as $post)
-		<div class="post" style="background:#666; padding:10px; color:#FFF; margin-bottom:20px;">
-			<div class="post-img">
-				<img src="{{url($post->url_thumbnail)}}" alt="">
-			</div>
+	<section class="last-posts">
+		<div class="all-posts eight columns">
+	        <div class="head-section">
+	            <h3>Toutes les actus</h3>
+	            <hr>
+	            <span>Toutes les actualités disponibles.</span>
+	        </div>
 
-			<div class="post-content">
-				<h4>{{$post->title}}</h4>
-				<p>
-					{{$post->abstract}}
-					<a href="{{url('posts', $post->id)}}">Lire la suite</a>
-				</p>
-				<span>{{$post->status}}</span>
-			</div>
-		</div>
-	@empty
-		<p>Il n'y a aucun post pour le moment. Merci.</p>
-	@endforelse
+			@forelse ($posts as $post)
+
+				<div class="post six columns">
+	                <div class="post-content">
+	                    <h2>{{ $post->title }}</h2>
+	                    <p>
+	                        {{ $post->abstract }}
+	                    </p>
+	                    <a href="{{ url('posts', $post->id) }}">Lire la suite</a>
+	                </div>
+
+	                <img src="{{url($post->url_thumbnail)}}" alt="">
+	            </div>
+
+			@empty
+				<h5>Il n'y a pas de post pour le moment. Merci.</h5>
+			@endforelse
+	    </div>
+
+	    @include('partials.front.sidebar')
+	</section>
 
 @endsection
+

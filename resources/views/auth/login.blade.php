@@ -4,39 +4,35 @@
 
 @section('content')
 
-    <form action="{{url('login')}}" method="POST">
+    <section id="contact" class="connexion">
+        <div class="head-section eight columns">
+            <h3>Connexion</h3>
+            <hr>
+            <span>Connectez-vous à votre espace.</span>  
+        </div>
 
-        {{csrf_field()}} {{-- token pour protéger votre formulaire CSRF --}}
+        <form class="eight columns" action="{{url('login')}}" method="POST">
 
-        <div>
-            <input type="text"  value="{{old('username')}}" name="username">
-            <label for="Username">Username</label>
+            {{ csrf_field() }}
+            <input type="text" value="{{old('username')}}" name="username" class="six columns" required placeholder="Username">
             @if($errors->has('username')) 
                 <span>{{$errors->first('username')}}</span>
             @endif
-        </div>
 
-        <div>
-            <input type="password" name="password">
-            <label for="Password">Password</label>
-             @if($errors->has('password')) <span>{{$errors->first('password')}}</span>@endif
-        </div>
+            <input type="password" name="password" class="six columns" required placeholder="Password">
+             @if($errors->has('password')) <span>{{$errors->first('password')}}</span>
+             @endif
+        
+            <!-- <div>
+                <div>
+                    <input {{old('remember')? 'checked' : ''}} type="checkbox" id="remember" name="remember" value="remember"/>
+                    <label for="remember">se souvenir de moi</label>
+                </div>
+            </div> -->
+            
+            <input type="submit" name="action" value="connexion">
+        </form>
 
-        <div>
-            <div>
-                <input {{old('remember')? 'checked' : ''}} type="checkbox" id="remember" name="remember" value="remember"/>
-                <label for="remember">se souvenir de moi</label>
-            </div>
-        </div>
-
-        <div>
-            <div>
-                <button type="submit" name="action">Submit
-                    send
-                </button>
-            </div>
-        </div>
-
-    </form>
+    <section id="contact" class="connexion">
 
 @endsection
