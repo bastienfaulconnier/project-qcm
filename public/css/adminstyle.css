@@ -2,6 +2,10 @@ header, body, footer {
     padding-left: 300px;
 }
 
+body {
+    background-color:#c8e6c9 ;
+}
+
 nav {
     background-color: #1b5e20 ; 
 }
@@ -16,7 +20,7 @@ nav {
 
 
 @media only screen and (max-width : 992px) {
-    header, body, footer {
+    /* header, body, footer {
     padding-left: 0;
-    }
+    } */
 }

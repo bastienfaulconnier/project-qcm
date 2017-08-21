@@ -6,9 +6,9 @@
         <p><strong>Bonjour, admin</strong></p>
         <p>Bonne journée !</p>
     </div></li>
-    <li><a class="waves-effect" href="{{url('dashboard')}}">Dashboard</a></li>
+    <li><a class="waves-effect" href="{{url('teacher/dashboard')}}">Dashboard</a></li>
     <li><a class="waves-effect" href="#!">Fiches</a></li>
-    <li><a class="waves-effect" href="#!">Articles</a></li>				
+    <li><a class="waves-effect" href="{{url('teacher/listposts')}}">Articles</a></li>				
     <li><a class="waves-effect" href="#!">Commentaires</a></li>				
     <li><a class="waves-effect" href="#!">Pages</a></li>				
     <li><a class="waves-effect" href="#!">Élèves</a></li>				
