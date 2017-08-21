@@ -15,42 +15,32 @@
                         <a href="{{url('posts', $post->id)}}">Lire la suite</a>        
                     </div>  
                 </section>
+                
+                <section class="last-posts">
+                    <div class="all-posts eight columns">
+                        <div class="head-section">
+                            <h3>Dernières Actus</h3>
+                            <hr>
+                            <span>Toutes les dernières actualités dans le monde des mathématiques.</span>
+                        </div>
 
+            @else
+
+                <div class="post six columns">
+                    <div class="post-content">
+                        <h2>{{ $post->title }}</h2>
+                        <p>
+                            {{ $post->abstract }}
+                        </p>
+                        <a href="{{url('posts', $post->id)}}">Lire la suite</a>
+                    </div>
+
+                    <img src="{{url($post->url_thumbnail)}}" alt="">
+                </div>
             @endif
         @empty
             <h5>Pas de post enregistré.</h5>
         @endforelse
-
-        
-
-        <section class="last-posts">
-            <div class="all-posts eight columns">
-                <div class="head-section">
-                    <h3>Dernières Actus</h3>
-                    <hr>
-                    <span>Toutes les dernières actualités dans le monde des mathématiques.</span>
-                </div>
-
-                @forelse($posts as $post)
-                    @if(!$loop->first)
-
-                        <div class="post six columns">
-                            <div class="post-content">
-                                <h2>{{ $post->title }}</h2>
-                                <p>
-                                    {{ $post->abstract }}
-                                </p>
-                                <a href="{{url('posts', $post->id)}}">Lire la suite</a>
-                            </div>
-
-                            <img src="{{url($post->url_thumbnail)}}" alt="">
-                        </div>
-
-                    @endif
-                @empty
-                    <h5>Pas de post enregistré.</h5>
-                @endforelse
-
 
                 <a href="{{ url('posts') }}">Voir toutes les actus >></a>
             </div>
