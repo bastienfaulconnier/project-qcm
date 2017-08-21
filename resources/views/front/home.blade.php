@@ -3,15 +3,25 @@
 @section('content')
         <div class="content">
 
-        <section class="main-post">
-            <img src="{{url($posts[0]->url_thumbnail)}}" alt="">
+        @forelse($posts as $post)
+            @if($loop->first)
 
-            <div class="main-content">
-                <h2>{{ $posts[0]->title }}</h2>
-                <p>{{ $posts[0]->abstract }}</p>
-                <a href="{{url('posts', $posts[0]->id)}}">Lire la suite</a>        
-            </div>  
-        </section>
+                <section class="main-post">
+                    <img src="{{url($post->url_thumbnail)}}" alt="">
+
+                    <div class="main-content">
+                        <h2>{{ $post->title }}</h2>
+                        <p>{{ $post->abstract }}</p>
+                        <a href="{{url('posts', $post->id)}}">Lire la suite</a>        
+                    </div>  
+                </section>
+
+            @endif
+        @empty
+            <h5>Pas de post enregistré.</h5>
+        @endforelse
+
+        
 
         <section class="last-posts">
             <div class="all-posts eight columns">
@@ -21,28 +31,26 @@
                     <span>Toutes les dernières actualités dans le monde des mathématiques.</span>
                 </div>
 
-                <div class="post six columns">
-                    <div class="post-content">
-                        <h2>{{ $posts[1]->title }}</h2>
-                        <p>
-                            {{ $posts[1]->abstract }}
-                        </p>
-                        <a href="{{url('posts', $posts[1]->id)}}">Lire la suite</a>
-                    </div>
+                @forelse($posts as $post)
+                    @if(!$loop->first)
 
-                    <img src="{{url($posts[1]->url_thumbnail)}}" alt="">
-                </div>
-                <div class="post six columns">
-                    <div class="post-content">
-                        <h2>{{ $posts[2]->title }}</h2>
-                        <p>
-                            {{ $posts[2]->abstract }}
-                        </p>
-                        <a href="{{url('posts', $posts[2]->id)}}">Lire la suite</a>
-                    </div>
+                        <div class="post six columns">
+                            <div class="post-content">
+                                <h2>{{ $post->title }}</h2>
+                                <p>
+                                    {{ $post->abstract }}
+                                </p>
+                                <a href="{{url('posts', $post->id)}}">Lire la suite</a>
+                            </div>
 
-                    <img src="{{url($posts[2]->url_thumbnail)}}" alt="">
-                </div>
+                            <img src="{{url($post->url_thumbnail)}}" alt="">
+                        </div>
+
+                    @endif
+                @empty
+                    <h5>Pas de post enregistré.</h5>
+                @endforelse
+
 
                 <a href="{{ url('posts') }}">Voir toutes les actus >></a>
             </div>
