@@ -5,7 +5,6 @@
 
         @forelse($posts as $post)
             @if($loop->first)
-
                 <section class="main-post">
                     <img src="{{url($post->url_thumbnail)}}" alt="">
 
@@ -35,6 +34,11 @@
 
                     <img src="{{url($post->url_thumbnail)}}" alt="">
                 </div>
+
+                @if(!$loop->first && $loop->last)
+                    </section>
+                @endif
+            @endif
         @empty
             <h5>Pas de post enregistré.</h5>
         @endforelse
@@ -43,7 +47,6 @@
             </div>
 
             @include('partials.front.sidebar')
-        </section>
 
         <section id="lycee">
             <div class="head-section eight columns">
