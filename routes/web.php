@@ -17,7 +17,11 @@ Route::get('logout', 'Admin\LoginController@logout') ->name('logout');
 Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:teacher'])->group(function() {
 	Route::get('dashboard', 'DashboardController@index')->name('teacher/home');
 	Route::get('listposts', 'DashboardController@showAllPosts');	
-	Route::get('editpost/{id}', 'DashboardController@showPost');		
+	Route::get('editpost/{id}', 'DashboardController@showPost');
+
+	/* QCM */
+	Route::get('questions', 'QuestionController@index');
+	Route::get('questions/create', 'QuestionController@create');	
 });
 
 
