@@ -38,17 +38,35 @@
             <input placeholder="Auteur" id="Author" type="text" class="validate">
         </div>
 
-        <div class="row">
-        <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
-  </div>
-</div>
+       {{--   <div class="row">
+            <div class="input-field col s12">
+                <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+        </div>  --}}
+
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Fichier</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+
+        <div class="switch">
+            <label>
+            Publié
+            <input type="checkbox">
+            <span class="lever"></span>
+            </label>
+        </div>
 
         <div class="row robot-marge">
             <div class="input-field col s12 ">
@@ -57,6 +75,7 @@
                 </button>
             </div>
         </div>
+
     </form>
 </div>
 
