@@ -22,8 +22,7 @@ Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:
 	Route::get('editpost/{id}', 'DashboardController@showPost');
 
 	/* QCM */
-	Route::get('questions', 'QuestionController@index');
-	Route::get('questions/create', 'QuestionController@create');	
+	Route::resource('questions', 'QuestionController');
 });
 
 

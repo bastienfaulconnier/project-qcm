@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Teacher;
 
 use App\Question;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -27,8 +28,8 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        
-        return view('back.teacher.qcm.create');
+
+        return view('back.teacher.qcm.create-one');
     }
 
     /**
