@@ -25,7 +25,7 @@ class DashboardController extends Controller
         }
     
         public function showAllPosts() {
-            $posts = Post::where('status', '=', 'published')->orderBy('date', 'desc')->get();
+            $posts = Post::orderBy('date', 'desc')->get();
             
             return view('back.teacher.listposts', compact('posts'));
         }
