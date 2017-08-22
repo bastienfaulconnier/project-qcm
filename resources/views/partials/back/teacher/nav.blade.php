@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <ul id="nav-mobile" class="side-nav fixed button-collapse" style="transform: translateX(0%);">
+=======
+<ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
+>>>>>>> 06f76c4b884581a9d1e5f37609a0e5580959efd4
     <li><div class="user-view">			
         <div class="background">
             <img src="{{ URL::asset('img/maths.jpg') }}">
