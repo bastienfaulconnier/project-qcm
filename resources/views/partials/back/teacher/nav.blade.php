@@ -1,4 +1,4 @@
-<ul id="mav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
+<ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0%);">
     <li><div class="user-view">			
         <div class="background">
             <img src="{{ URL::asset('img/maths.jpg') }}">

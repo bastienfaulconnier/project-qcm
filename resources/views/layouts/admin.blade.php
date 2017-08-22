@@ -26,14 +26,21 @@
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
 		<nav>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-
+				<li>
+					<a href="{{route('home')}}">Retour au site</a>
+				</li>
 				<li>
 					<a href="{{route('logout')}}">Se déconnecter</a>
 				</li>
 			</ul>
 		</nav>
 		
-		@include('partials.back.teacher.nav')
+		@if(auth()->user()->role !== 'teacher')
+			@include('partials.back.student.nav')
+		@else
+			@include('partials.back.teacher.nav')
+		@endif
+		
 
 		@include('partials.flash')
 		

@@ -10,10 +10,7 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     public function login(Request $request) {
-        if(auth()->check()) {
-                
-            return redirect()->route('home');
-        }
+        if(auth()->check()) {return redirect()->route('home');}
 
     	if($request->isMethod('post')) {
     		$this->validate($request, [
