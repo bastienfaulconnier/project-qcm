@@ -25,7 +25,7 @@
                 <td>{{--  {{$post->user? $post->user->username: 'aucun auteur'}}  --}}</td>
                 <td>0</td>
                 <td>{{$post->status}}</td>
-                <td><a href="{{ url('teacher/editpost', $post->id) }}" class="waves-effect waves-light btn">Edit</a></td> 
+                <td><a href="{{ route('posts.edit', $post->id) }}" class="waves-effect waves-light btn">Edit</a></td> 
             </tr>               
               @empty
               <p>Vide.</p>

@@ -6,7 +6,7 @@
             </div>
             <p><strong>Bonjour, {{auth()->user()->username}}</strong></p>
         <li><a class="waves-effect" href="{{url('teacher/dashboard')}}">Dashboard</a></li>
-        <li><a class="waves-effect" href="{{url('teacher/listposts')}}">Articles</a></li>
+        <li><a class="waves-effect" href="{{url('teacher/posts')}}">Articles</a></li>
         <li><a class="waves-effect" href="{{url('teacher/questions')}}">QCM</a></li>				
         <li><a class="waves-effect" href="#!">Commentaires</a></li>			
         <li><a class="waves-effect" href="#!">Élèves</a></li>				

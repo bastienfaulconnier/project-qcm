@@ -17,7 +17,7 @@ class DashboardController extends Controller
             return view('back.teacher.dashboard', compact('posts'));
         }
     
-        public function showAllPosts() {
+       /*  public function showAllPosts() {
             $posts = Post::orderBy('date', 'desc')->get();
             
             return view('back.teacher.listposts', compact('posts'));
@@ -27,7 +27,7 @@ class DashboardController extends Controller
             $post = Post::findOrFail($id);
     
             return view('back.teacher.editpost', compact('post'));
-        }
+        } */
 
     }
 

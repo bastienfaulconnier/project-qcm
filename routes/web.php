@@ -18,8 +18,9 @@ Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:
 	Route::get('dashboard', 'DashboardController@index')->name('teacher/home');
 
 	/* Articles */
-	Route::get('listposts', 'DashboardController@showAllPosts');	
-	Route::get('editpost/{id}', 'DashboardController@showPost');
+	/* Route::get('listposts', 'DashboardController@showAllPosts');	
+	Route::get('editpost/{id}', 'DashboardController@showPost'); */
+	Route::resource('posts', 'PostController');
 
 	/* QCM */
 	Route::resource('questions', 'QuestionController');
