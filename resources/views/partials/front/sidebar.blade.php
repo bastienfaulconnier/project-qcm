@@ -1,3 +1,3 @@
-<div class="sidebar four columns" style="height:600px; background:#3c3c3c; padding:20px; float:right;">
-    <h3 style="color:#ffffff;">Sidebar</h3>
+<div class="sidebar four columns" style="height:600px; float:right;">
+    <a class="twitter-timeline" data-width="400" data-height="600" data-theme="dark" href="https://twitter.com/ecolemultimedia">Tweets by ecolemultimedia</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>

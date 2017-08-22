@@ -8,13 +8,13 @@
             <div class="card-content white-text">
               <span class="card-title">Derniers articles</span>
               @forelse($posts as $post)
-                <a href="#"><p> {{$post->title}} </p></a>
+                <a href="{{ url('teacher/editpost', $post->id) }}"><p> {{$post->title}} </p></a>
               @empty
-              <p>Vide.</p>
+              <p>Aucun article.</p>
               @endforelse
             </div>
             <div class="card-action">
-              <a href="#">Voir tous les articles</a>
+              <a href="{{url('teacher/listposts')}}">Voir tous les articles</a>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
       			  <a href="#"><p>QCM #3</p></a>
             </div>
             <div class="card-action">
-              <a href="#">Voir tous les QCM</a>
+              <a href="{{url('teacher/questions')}}">Voir tous les QCM</a>
             </div>
           </div>
         </div>
