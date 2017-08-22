@@ -14,19 +14,17 @@
 	{{--  CSS local  --}}
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/adminstyle.css') }}">
 
-	{{-- JS local --}}
-	{{--  <script src="{{ URL::asset('js/admin.js') }}">  --}}
-
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Math Back-Office</title>
+	
 </head>
 
 <body>
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
 		<nav>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-
+			<ul id="nav-mobile1" class="right hide-on-med-and-down">
+			<a href="#" data-activates="nav-mobile" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
 				<li>
 					<a href="{{route('logout')}}">Se déconnecter</a>
 				</li>
@@ -52,5 +50,8 @@
 
 		@include('partials.back.footer')
 	</div>
+
+	{{-- JS local --}}
+	<script src="{{ URL::asset('js/admin.js') }}"></script>
 </body>
 </html>
