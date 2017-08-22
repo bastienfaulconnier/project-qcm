@@ -18,8 +18,6 @@ Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:
 	Route::get('dashboard', 'DashboardController@index')->name('teacher/home');
 
 	/* Articles */
-	/* Route::get('listposts', 'DashboardController@showAllPosts');	
-	Route::get('editpost/{id}', 'DashboardController@showPost'); */
 	Route::resource('posts', 'PostController');
 
 	/* QCM */
@@ -31,15 +29,3 @@ Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:
 Route::namespace('Admin\Student')->prefix('student')->middleware(['auth', 'role'])->group(function() {
 	Route::get('dashboard', 'DashboardController@index')->name('student/home');
 });
-
-/* Back Profs */
-/* Route::group(['middleware' => 'auth'], function(){
-	Route::get('dashboard', 'Admin\DashboardController@index');
-	Route::resource('admin/robot', 'Admin\RobotController');
-}); */
-
-/* Back Eleves */
-/* Route::group(['middleware' => 'auth'], function(){
-	Route::get('dashboard', 'Admin\DashboardController@index');
-	Route::resource('admin/qcmlist', 'Admin\RobotController');
-}); */
