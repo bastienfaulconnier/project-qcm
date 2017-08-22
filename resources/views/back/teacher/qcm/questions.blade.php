@@ -4,7 +4,7 @@
 	<h4>Voici les QCM</h4>
 
 	<div class="add-question">
-		<a href="{{url('teacher/questions/create')}}" class="waves-effect light-green lighten-2 btn">Ajouter un QCM</a>
+		<a href="{{route('questions.create')}}" class="waves-effect light-green lighten-2 btn">Ajouter un QCM</a>
 	</div>
 
 	<table style="width:70%;">
