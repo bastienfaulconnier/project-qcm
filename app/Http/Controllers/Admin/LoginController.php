@@ -10,6 +10,11 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     public function login(Request $request) {
+        if(auth()->check()) {
+                
+            return redirect()->route('home');
+        }
+
     	if($request->isMethod('post')) {
     		$this->validate($request, [
     				'username'		=> 'bail|required',
@@ -48,9 +53,11 @@ class LoginController extends Controller
     }
 
     public function logout() {
-    	auth()->logout();
+        if(auth()->check()) {
+        	auth()->logout();
 
-    	session()->flash('message', 'Merci de votre visite.');
+        	session()->flash('message', 'Merci de votre visite.');
+        }
 
     	return redirect()->home();
     }
