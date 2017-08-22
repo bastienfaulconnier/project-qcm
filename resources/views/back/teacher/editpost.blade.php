@@ -14,45 +14,20 @@
     </div>
     @endif
 
+    <h2>Modifier l'article</h2>
+
     <form class="col s12 postform" action="" method="post" enctype="multipart/form-data" >
         {{csrf_field()}}
         {{ method_field('PUT') }}
 
         <div class="row">
-            <div class="input-field col s6">
+            <label for="first_name">Titre</label>
             <input placeholder="Titre" id="title" type="text" class="validate" value="{{$post->title}}">
         </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-          <textarea placeholder="Extrait" id="textarea1" class="materialize-textarea">{{$post->abstract}}</textarea>
-        </div>
-
-        <div class="row">
-            <div class="input-field col s12">
-          <textarea placeholder="Texte" id="text" class="materialize-textarea">{{$post->content}}</textarea>
-        </div>
-
-        <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Auteur" id="Author" type="text" class="validate">
-        </div>
-
-       {{--   <div class="row">
-            <div class="input-field col s12">
-                <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-            </div>
-        </div>  --}}
-
         <div class="file-field input-field">
             <div class="btn">
-                <span>Fichier</span>
+                <span>Image à la une</span>
                 <input type="file">
             </div>
             <div class="file-path-wrapper">
@@ -60,9 +35,19 @@
             </div>
         </div>
 
+        <div class="row">
+          <label for="textarea">Extrait</label>
+          <textarea placeholder="Extrait" id="textarea1" class="materialize-textarea">{{$post->abstract}}</textarea>
+        </div>
+
+        <div class="row">
+          <label for="textarea">Texte</label>
+          <textarea placeholder="Texte" id="text" class="materialize-textarea">{{$post->content}}</textarea>
+        </div>
+
         <div class="switch">
             <label>
-            Publié
+            Publication
             <input type="checkbox">
             <span class="lever"></span>
             </label>
