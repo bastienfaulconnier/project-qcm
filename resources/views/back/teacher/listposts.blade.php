@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
+
+<h2>Liste des articles</h2>
+
 <div class="addpost">
     <a href="#" class="waves-effect waves-light btn">Ajouter un article</a>
 </div>
@@ -18,13 +21,11 @@
         <tbody>
             @forelse($posts as $post)
             <tr>
-                <td>{{ $post->id }}</td>
                 <td>{{$post->title}}</td>
                 <td>{{--  {{$post->user? $post->user->username: 'aucun auteur'}}  --}}</td>
                 <td>0</td>
                 <td>{{$post->status}}</td>
-                <td><a href="{{ url('teacher/editpost', $post->id) }}" class="waves-effect waves-light btn">Edit</a></td>
-                
+                <td><a href="{{ url('teacher/editpost', $post->id) }}" class="waves-effect waves-light btn">Edit</a></td> 
             </tr>               
               @empty
               <p>Vide.</p>

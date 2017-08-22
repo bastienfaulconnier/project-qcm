@@ -18,6 +18,9 @@ nav {
     color:white;
 }
 
+.postform input::-moz-placeholder, .postform input:-ms-input-placeholder, .postform input::-webkit-input-placeholder  {
+    color:blue;
+  }
 
 @media only screen and (max-width : 992px) {
     header, body, footer {
