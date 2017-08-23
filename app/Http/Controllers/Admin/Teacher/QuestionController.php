@@ -31,7 +31,7 @@ class QuestionController extends Controller
     public function create()
     {
 
-        return view('back.teacher.qcm.create-one');
+        return view('back.teacher.qcm.create-first-step');
     }
 
     /**
@@ -39,7 +39,7 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createTwo(QuestionRequest $request)
+    public function createSecondStep(QuestionRequest $request)
     {
         $question = Question::create([
             'title'       => $request->title,
@@ -49,7 +49,7 @@ class QuestionController extends Controller
         ]);
         $number = $request->number_choice;
 
-        return view('back.teacher.qcm.create-two', compact('question', 'number'));
+        return view('back.teacher.qcm.create-second-step', compact('question', 'number'));
     }
 
     /**

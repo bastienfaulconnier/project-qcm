@@ -9,7 +9,7 @@
 	    </div>
 	@endif
 
-	<form class="col s8" action="{{url('teacher/questions/create-two')}}" method="post" enctype="multipart/form-data" novalidate>
+	<form class="col s8" action="{{url('teacher/questions/create-second-step')}}" method="post" enctype="multipart/form-data" novalidate>
 		{{csrf_field()}}
 
 		<div class="row">
@@ -46,14 +46,14 @@
 		</div>
 
 		<div class="row">
-			<div class="switch">
-				<label>
-					Unpublished
-					<input {{old('status') == 'published'? 'checked' : ''}} type="checkbox" name="status" value="published">
-					<span class="lever"></span>
-					Published
-				</label>
-			</div>
+			<p>
+				<input type="radio" id="check-yes" name="status" value="published">
+      			<label for="check-yes">Published</label>
+			</p>
+			<p>
+      			<input type="radio" id="check-no" name="status" value="unpublished">
+      			<label for="check-no">Unpublish</label>
+  			</p>
 		</div>
 
 		<div class="row">
