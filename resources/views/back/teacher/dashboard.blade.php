@@ -25,12 +25,14 @@
           <div class="card green darken-4">
             <div class="card-content white-text">
               <span class="card-title">Derniers QCM</span>
-              <a href="#"><p>QCM #1</p></a>
-      			  <a href="#"><p>QCM #2</p></a>
-      			  <a href="#"><p>QCM #3</p></a>
+              @forelse($questions as $question)
+                <a href="{{route('questions.edit', $question->id)}}"><p>{{$question->title}}</p></a>
+              @empty
+                <p>Pas de QCM enregistré.</p>
+              @endforelse
             </div>
             <div class="card-action">
-              <a href="{{url('teacher/questions')}}">Voir tous les QCM</a>
+              <a href="{{route('questions.index')}}">Voir tous les QCM</a>
             </div>
           </div>
         </div>

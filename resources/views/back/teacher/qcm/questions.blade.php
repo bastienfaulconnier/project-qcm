@@ -18,8 +18,8 @@
         @forelse($questions as $question)
 			<tr>
 				<td>{{$question->title}}</td>
-				<td><a href="" class="waves-effect light-blue lighten-3 btn">Éditer</a></td>
-				<td><a href="" class="waves-effect deep-orange darken-1 btn">Supprimer</a></td>
+				<td><a href="{{route('questions.edit', $question->id)}}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">mode_edit</i></a></td>
+				<td><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">clear</i></a></td>
 			</tr>
         @empty
         	<tr>

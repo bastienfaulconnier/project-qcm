@@ -9,6 +9,7 @@
 	
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	{{--  CSS local  --}}
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/adminstyle.css') }}">
