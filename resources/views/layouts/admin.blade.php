@@ -63,5 +63,20 @@
 	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
 	<script src="{{ URL::asset('js/admin.js') }}"></script>
+	<script>
+		// Lorsqu'on envoie le form
+		$('.delete-form').on('submit', function (e) {
+			e.preventDefault(); // Bloque l'envoi du formulaire
+			let form = this;
+			// Ouvre la modale
+			$('#modal1').modal('open');
+			
+			// Ajoute un événement sur le bouton "OUI"
+			$('#agree-delete').click( function () {
+				form.submit();
+			});
+			
+		});
+	</script>
 </body>
 </html>

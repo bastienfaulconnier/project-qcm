@@ -90,7 +90,9 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $question = Question::findOrFail($id);
+
+        return view('back.teacher.qcm.edit', compact('question'));
     }
 
     /**
@@ -102,7 +104,12 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $question = Question::findOrFail($id);
+        $question->title = $request->title;
+        $question->content = $request->content;
+        $question->save();
+
+        return redirect(route('questions.index'));
     }
 
     /**
@@ -113,6 +120,8 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $question = Question::findOrFail($id)->delete();
+
+        return redirect(route('questions.index'));
     }
 }
