@@ -22,6 +22,7 @@ Route::namespace('Admin\Teacher')->prefix('teacher')->middleware(['auth', 'role:
 
 	/* QCM */
 	Route::resource('questions', 'QuestionController');
+	Route::post('questions/create-second-step', 'QuestionController@createSecondStep');
 });
 
 
