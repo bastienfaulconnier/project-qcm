@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Teacher;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
@@ -27,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.teacher.posts.create');
     }
 
     /**
@@ -36,9 +37,17 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+
+        if ($post->url_thumbnail == null) {
+            $post->url_thumbnail = 'img/default.jpg';
+            $post->save();
+        }
+
+            
+        return redirect()->route('posts.index')->with('message', 'Création effectuée !');
     }
 
     /**
@@ -74,7 +83,14 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /* $post = Post::update ([
+            'title' => $request->title,
+            'abstract' => $request->abstract,
+            'content' => $request->content,
+            'published' => $request->published
+        ]); */
+        
+        return redirect()->route('posts.index')->with('message', 'Mise à jour effectuée !');
     }
 
     /**
@@ -85,6 +101,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $post = Post::find($id);
+        $name = $post->name;
+        $post->delete();
+
+        return redirect()->route('posts.index')->with('message', 'Suppression effectuée');
     }
 }

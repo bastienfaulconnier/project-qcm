@@ -7,7 +7,7 @@
             @if($loop->first)
 
                 <section class="main-post">
-                    <img src="{{url($post->url_thumbnail)}}" alt="">
+                    <img src="{{ URL::asset($post->url_thumbnail) }}" alt="">
 
                     <div class="main-content">
                         <h2>{{ $post->title }}</h2>
@@ -35,7 +35,7 @@
                         <a href="{{url('posts', $post->id)}}">Lire la suite</a>
                     </div>
 
-                    <img src="{{url($post->url_thumbnail)}}" alt="">
+                    <img src="{{ URL::asset($post->url_thumbnail) }}" alt="">
                 </div>
             @endif
         @empty
