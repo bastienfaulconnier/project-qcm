@@ -27,12 +27,30 @@
                 <td>0</td>
                 <td>{{$post->status}}</td>
                 <td><a href="{{ route('posts.edit', $post->id) }}" class="waves-effect waves-light btn"><i class="material-icons ">edit</i></a></td> 
-                <td><a href="{{ route('posts.destroy', $post->id) }}" class="waves-effect waves-light btn"><i class="material-icons ">delete</i></a></td>
+                <td>
+                    <form class="delete-form" action="{{route('posts.destroy', $post->id)}}" method="post">
+						{{csrf_field()}}
+						{{method_field('DELETE')}}
+
+						<button type="submit" class="waves-effect waves-light btn red modal-trigger"><i class="material-icons">clear</i></button>
+					</form>
+                </td>
             </tr>               
               @empty
               <p>Vide.</p>
               @endforelse
         </tbody>
       </table>
+
+      <div id="modal1" class="modal red white-text">
+		<div class="modal-content">
+			<h4>Supprimer</h4>
+			<p>Voulez-vous vraiment supprimer cet article ?</p>
+		</div>
+		<div class="modal-footer red">
+			<a id="agree-delete" class="waves-effect waves-green btn-flat white-text">OUI</a>
+			<a id="denie-delete" class="modal-action modal-close waves-effect waves-green btn-flat white-text">NON</a>
+		</div>
+	</div>
 
 @endsection
