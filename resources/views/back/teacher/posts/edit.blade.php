@@ -22,13 +22,13 @@
 
         <div class="row">
             <label for="first_name">Titre</label>
-            <input placeholder="Titre" id="title" type="text" class="validate" value="{{$post->title}}">
+            <input placeholder="Titre" id="title" type="text" class="validate" name="title" value="{{$post->title}}">
         </div>
 
         <div class="file-field input-field">
             <div class="btn">
                 <span>Image à la une</span>
-                <input type="file">
+                <input type="file" name="url_thumbnail">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" value="{{ $post->url_thumbnail }}">
@@ -37,12 +37,12 @@
 
         <div class="row">
           <label for="textarea">Extrait</label>
-          <textarea placeholder="Extrait" id="textarea1" class="materialize-textarea">{{$post->abstract}}</textarea>
+          <textarea placeholder="Extrait" id="textarea1" class="materialize-textarea" name="abstract">{{$post->abstract}}</textarea>
         </div>
 
         <div class="row">
           <label for="textarea">Texte</label>
-          <textarea placeholder="Texte" id="text" class="materialize-textarea">{{$post->content}}</textarea>
+          <textarea placeholder="Texte" id="text" class="materialize-textarea" name="content">{{$post->content}}</textarea>
         </div>
 
         <div class="row">

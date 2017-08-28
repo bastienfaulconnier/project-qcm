@@ -27,7 +27,7 @@
         <div class="file-field input-field">
             <div class="btn">
                 <span>Image à la une</span>
-                <input type="file">
+                <input name="url_thumbnail" type="file">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
