@@ -14,7 +14,7 @@ class PostRepository
 	}
 
 	public function getPostSortByStatusAndDateWithPaginate($paginate) {
-		$posts = Post::where('status', '=', 'published')->orderBy('date', 'desc')->limit($paginate)->get();
+		$posts = Post::where('status', '=', 'published')->orderBy('created_at', 'desc')->limit($paginate)->get();
         
         return $posts;
 	}

@@ -6,6 +6,7 @@ use DB;
 use App\User;
 use App\Post;
 use App\Comment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Repositories\PostRepository;
 
@@ -18,12 +19,13 @@ class FrontController extends Controller
     //
     public function index(PostRepository $postrepository){
         $posts = $postrepository->getPostSortByStatusAndDateWithPaginate(3);
+        $current = Carbon::now();
 
-        return view('front.home', compact('posts'));
+        return view('front.home', compact('posts', 'current'));
     }
 
     public function showAllPosts() {
-        $posts = Post::where('status', '=', 'published')->orderBy('date', 'desc')->get();
+        $posts = Post::where('status', '=', 'published')->orderBy('created_at', 'desc')->get();
         
         return view('front.posts', compact('posts'));
     }

@@ -18,6 +18,7 @@
 	                    <p>
 	                        {{ $post->abstract }}
 	                    </p>
+	                    <p>{{ $post->created_at->format('d/m/Y') }}</p>
 	                    <a href="{{ url('posts', $post->id) }}">Lire la suite</a>
 	                </div>
 

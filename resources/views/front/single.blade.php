@@ -6,7 +6,7 @@
 
 		<div class="single-content eight columns">
 			<h2>{{$post->title}}</h2>
-
+			<p>{{ $post->created_at->format('d/m/Y') }}</p>
 			<p>{{$post->content}}</p>
 
 			<a href="{{ url('posts') }}">Renvenir aux actualités >></a>
@@ -23,7 +23,7 @@
 			</form>
 
 			@forelse($comments as $comment)
-				<h6>{{$comment->name}}</h6>
+				<h6>{{$comment->name}} - <span>{{$comment->created_at->format('d/m/Y')}}</span></h6>
 				<p>{{$comment->content}}</p>
 			@empty
 				<p>Pas de commentaire enregistré.</p>

@@ -21,9 +21,9 @@ class PostsTableSeeder extends Seeder
         		"abstract" 	  	  => $faker->paragraph(),
         		"content" 	  	  => $faker->paragraphs(3, true),
         		"url_thumbnail"   => $faker->imageUrl(500, 500),
-        		"date" 			  => $faker->date('Y-m-d', 'now'),
         		"status" 		  => $tab[$rand],
-        		"user_id" 		  => 1
+        		"user_id" 		  => 1,
+                "created_at"      => $faker->date('Y-m-d', 'now')
 	        ]);
         }
     }

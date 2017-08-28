@@ -22,7 +22,6 @@ class CreatePostsTable extends Migration
                   ->nullable();
             $table->string('url_thumbnail')
                   ->nullable();
-            $table->timestamp('date');
             $table->enum('status', ['published', 'unpublished'])
                   ->default('published');
             $table->unsignedInteger('user_id')

@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-@include('partials.flash')
-
 @section('content')
 
     <section id="contact" class="connexion">
@@ -11,19 +9,24 @@
             <span>Connectez-vous à votre espace.</span>  
         </div>
 
-        <form class="eight columns" action="{{url('login')}}" method="POST">
+        <form class="eight columns" action="{{url('login')}}" method="POST" novalidate>
             {{ csrf_field() }}
 
             <input type="text" value="{{old('username')}}" name="username" class="six columns" required placeholder="Username">
+            
+
+            <input type="password" name="password" class="six columns" required placeholder="Password">
+
+            <input type="submit" name="action" value="connexion">
+
             @if($errors->has('username')) 
                 <span>{{$errors->first('username')}}</span>
             @endif
-
-            <input type="password" name="password" class="six columns" required placeholder="Password">
-             @if($errors->has('password')) <span>{{$errors->first('password')}}</span>
-             @endif
+            @if($errors->has('password')) <span>{{$errors->first('password')}}
+                </span>
+            @endif
+            @include('partials.flash')
             
-            <input type="submit" name="action" value="connexion">
         </form>
 
     <section id="contact" class="connexion">
