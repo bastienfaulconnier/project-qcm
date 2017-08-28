@@ -39,19 +39,31 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        $post = Post::create($request->all());
-
-        if($request->hasFile('url_thumbnail'))
+        /* if($request->hasFile('url_thumbnail'))
         {
             $ext = $request->url_thumbnail->extension();
             $linkName = str_random(10) . '.' . $ext;
-            $request->link->storeAs('images', $linkName );
-            $post->link = $linkName;
+            $request->url_thumbnail->storeAs('images', $linkName );
+            $post->url_thumbnail = $linkName;
             $post->save();
-        }
+
+            return 'pouet';
+        } */
+        
+        $post = Post::create($request->all());
+
 
         if ($post->url_thumbnail == null) {
             $post->url_thumbnail = 'img/default.jpg';
+            $post->save();
+        }
+        else {
+            $request->hasFile('url_thumbnail');
+            $ext = $request->url_thumbnail->extension();
+            $linkName = str_random(10) . '.' . $ext;
+            $request->url_thumbnail->storeAs('images', $linkName );
+            $post->url_thumbnail = 'img/' . $linkName;
+            $request->url_thumbnail->move(public_path('img'), $linkName);            
             $post->save();
         }
             
