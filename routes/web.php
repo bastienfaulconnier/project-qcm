@@ -4,9 +4,7 @@ Route::get('/', 'FrontController@index')->name('home');
 Route::get('/posts', 'FrontController@showAllPosts');
 Route::get('/posts/{id}','FrontController@showPost');
 Route::post('/posts/comment', 'FrontController@sendComment');
-Route::get('/contact', 'FrontController@showContact');
 Route::get('/mentionslegales', 'FrontController@showLegalNotice');
-Route::get('/lycee', 'FrontController@showLycee');
 
 
 /* Auth */
