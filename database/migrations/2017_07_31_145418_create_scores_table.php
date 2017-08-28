@@ -15,7 +15,8 @@ class CreateScoresTable extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('status_question', ['fait', 'pas fait']);
+            $table->enum('status_question', ['done', 'undone'])
+                  ->default('undone');
             $table->tinyInteger('note')
                   ->nullable();
             $table->unsignedInteger('user_id')

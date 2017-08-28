@@ -25,5 +25,7 @@
 	</div>
 
 	@include('partials.front.footer')
+
+    {{-- JS LOCAL --}}
 </body>
 </html>

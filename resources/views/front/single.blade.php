@@ -10,6 +10,24 @@
 			<p>{{$post->content}}</p>
 
 			<a href="{{ url('posts') }}">Renvenir aux actualités >></a>
+
+			<form action="{{url('posts/comment')}}" method="post">
+				{{ csrf_field() }}
+
+				<input type="hidden" name="post_id" value="{{$post->id}}">
+				<input type="text" name="name" class="six columns" placeholder="Pseudo">
+
+				<input type="text" name="content" class="twelve columns" placeholder="Message...">
+
+				<input type="submit" name="action" value="Envoyer">
+			</form>
+
+			@forelse($comments as $comment)
+				<h6>{{$comment->name}}</h6>
+				<p>{{$comment->content}}</p>
+			@empty
+				<p>Pas de commentaire enregistré.</p>
+			@endforelse
 		</div>
 
 		@include('partials.front.sidebar')
