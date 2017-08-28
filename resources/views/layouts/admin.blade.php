@@ -24,7 +24,7 @@
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
 		<nav>
 		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-			<ul id="nav-mobile" class="right">			
+			<ul id="nav-mobile" class="right">
 				<li>
 					<a href="{{route('home')}}">Retour au site</a>
 				</li>
@@ -48,15 +48,7 @@
 				@yield('content')
 			</div>
 
-			{{--  @section('sidebar')
-				<div class="right" style="width:30%; float:right;">
-					Ici c'est la sidebar. Twitter and co.	
-					
-				</div>
-			@show  --}}
 		</div>
-
-		@include('partials.back.footer')
 	</div>
 
 	{{-- JS local --}}
