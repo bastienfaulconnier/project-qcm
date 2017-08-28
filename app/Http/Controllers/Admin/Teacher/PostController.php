@@ -41,11 +41,19 @@ class PostController extends Controller
     {
         $post = Post::create($request->all());
 
+        if($request->hasFile('url_thumbnail'))
+        {
+            $ext = $request->url_thumbnail->extension();
+            $linkName = str_random(10) . '.' . $ext;
+            $request->link->storeAs('images', $linkName );
+            $post->link = $linkName;
+            $post->save();
+        }
+
         if ($post->url_thumbnail == null) {
             $post->url_thumbnail = 'img/default.jpg';
             $post->save();
         }
-
             
         return redirect()->route('posts.index')->with('message', 'Création effectuée !');
     }
@@ -83,12 +91,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /* $post = Post::update ([
-            'title' => $request->title,
-            'abstract' => $request->abstract,
-            'content' => $request->content,
-            'published' => $request->published
-        ]); */
+        $post = Post::findOrFail($id);
+        $post->title = $request->title;
+        $post->save();
         
         return redirect()->route('posts.index')->with('message', 'Mise à jour effectuée !');
     }
@@ -103,7 +108,6 @@ class PostController extends Controller
     {
 
         $post = Post::find($id);
-        $name = $post->name;
         $post->delete();
 
         return redirect()->route('posts.index')->with('message', 'Suppression effectuée');

@@ -18,12 +18,22 @@ nav {
     color:white;
 }
 
-.postform input::-moz-placeholder, .postform input:-ms-input-placeholder, .postform input::-webkit-input-placeholder  {
-    color:blue;
-  }
+/* Flash */
+.container.flash .col.s12 {
+    background-color: #4caf50;
+    border: 4px solid #1b5e20;
+    margin-top: 15px;
+    padding-left: 10px;
+}
 
 @media only screen and (max-width : 992px) {
+
+    /* side-nav responsive*/
     header, body, footer {
     padding-left: 0;
+    }
+
+    .side-nav.fixed {
+        transform: translateX(-100%);
     }
 }
