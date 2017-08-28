@@ -23,8 +23,8 @@
 <body>
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
 		<nav>
-			<ul id="nav-mobile1" class="right hide-on-med-and-down">
-			<a href="#" data-activates="nav-mobile" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
+		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul id="nav-mobile" class="right">			
 				<li>
 					<a href="{{route('home')}}">Retour au site</a>
 				</li>

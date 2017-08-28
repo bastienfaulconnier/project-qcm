@@ -44,10 +44,10 @@ class PostController extends Controller
         if($request->hasFile('url_thumbnail'))
         {
             $ext = $request->url_thumbnail->extension();
-            $linkName = str_random(12) . '.' . $ext;
+            $linkName = str_random(10) . '.' . $ext;
             $request->link->storeAs('images', $linkName );
             $post->link = $linkName;
-            $post->save();   
+            $post->save();
         }
 
         if ($post->url_thumbnail == null) {
@@ -91,8 +91,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /* $post = Post::findOrFail($id); */
-        /* $post = Post::Update($request->all()); */
+        $post = Post::findOrFail($id);
+        $post->title = $request->title;
+        $post->save();
         
         return redirect()->route('posts.index')->with('message', 'Mise à jour effectuée !');
     }
