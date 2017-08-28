@@ -24,7 +24,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Send you on the first form for create the question.
      *
      * @return \Illuminate\Http\Response
      */
@@ -35,7 +35,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Save the question and send you to the second step, register the diferent choices.
      *
      * @return \Illuminate\Http\Response
      */
@@ -53,7 +53,7 @@ class QuestionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Save the choices and redirect the user to the index.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -68,7 +68,7 @@ class QuestionController extends Controller
             ]);
         }
 
-        return redirect(route('questions.index'));
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -109,7 +109,7 @@ class QuestionController extends Controller
         $question->content = $request->content;
         $question->save();
 
-        return redirect(route('questions.index'));
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -122,6 +122,6 @@ class QuestionController extends Controller
     {
         $question = Question::findOrFail($id)->delete();
 
-        return redirect(route('questions.index'));
+        return redirect()->route('questions.index');
     }
 }

@@ -12,8 +12,8 @@
         </div>
 
         <form class="eight columns" action="{{url('login')}}" method="POST">
-
             {{ csrf_field() }}
+
             <input type="text" value="{{old('username')}}" name="username" class="six columns" required placeholder="Username">
             @if($errors->has('username')) 
                 <span>{{$errors->first('username')}}</span>
@@ -22,13 +22,6 @@
             <input type="password" name="password" class="six columns" required placeholder="Password">
              @if($errors->has('password')) <span>{{$errors->first('password')}}</span>
              @endif
-        
-            <!-- <div>
-                <div>
-                    <input {{old('remember')? 'checked' : ''}} type="checkbox" id="remember" name="remember" value="remember"/>
-                    <label for="remember">se souvenir de moi</label>
-                </div>
-            </div> -->
             
             <input type="submit" name="action" value="connexion">
         </form>

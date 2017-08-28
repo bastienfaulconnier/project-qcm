@@ -6,13 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
+	/**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'status_question', 'note', 'user_id', 'question_id'
+    ];
+
     public function question() {
 
-    	return $this->belongTo(Question::class);
+    	return $this->belongsTo(Question::class);
     }
 
     public function user() {
 
-    	return $this->belongTo(User::class);
+    	return $this->belongsTo(User::class);
     }
 }

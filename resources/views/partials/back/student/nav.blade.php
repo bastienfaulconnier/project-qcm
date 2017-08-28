@@ -5,7 +5,7 @@
         </div>
         <p><strong>Bonjour, {{auth()->user()->username}}</strong></p>
     </div></li>
-    <li><a class="waves-effect" href="{{url('teacher/dashboard')}}">Dashboard</a></li>
-    <li><a class="waves-effect" href="#!">QCM</a></li>				
+    <li><a class="waves-effect" href="{{route('student/home')}}">Dashboard</a></li>
+    <li><a class="waves-effect" href="{{route('student/qcm/index')}}">QCM</a></li>				
 </ul>
 <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>

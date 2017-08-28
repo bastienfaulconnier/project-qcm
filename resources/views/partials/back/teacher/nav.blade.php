@@ -8,7 +8,7 @@
         <li><a class="waves-effect" href="{{url('teacher/dashboard')}}">Dashboard</a></li>
         <li><a class="waves-effect" href="{{url('teacher/posts')}}">Articles</a></li>
         <li><a class="waves-effect" href="{{url('teacher/questions')}}">QCM</a></li>				
-        <li><a class="waves-effect" href="#!">Commentaires</a></li>			
+        <li><a class="waves-effect" href="{{url('teacher/comments')}}">Commentaires</a></li>			
         <li><a class="waves-effect" href="#!">Élèves</a></li>				
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
