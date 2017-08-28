@@ -38,26 +38,15 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(PostRequest $request)
-    {
-        /* if($request->hasFile('url_thumbnail'))
-        {
-            $ext = $request->url_thumbnail->extension();
-            $linkName = str_random(10) . '.' . $ext;
-            $request->url_thumbnail->storeAs('images', $linkName );
-            $post->url_thumbnail = $linkName;
-            $post->save();
-
-            return 'pouet';
-        } */
-        
+    {        
         $post = Post::create($request->all());
-
 
         if ($post->url_thumbnail == null) {
             $post->url_thumbnail = 'img/default.jpg';
             $post->save();
         }
-        else {
+        else
+        {
             $request->hasFile('url_thumbnail');
             $ext = $request->url_thumbnail->extension();
             $linkName = str_random(10) . '.' . $ext;
@@ -105,7 +94,26 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->title = $request->title;
+        $post->abstract = $request->abstract;
+        $post->content = $request->content;
+        $post->url_thumbnail = $request->url_thumbnail;
+        $post->status = $post->status;
         $post->save();
+
+        if ($post->url_thumbnail == null) {
+            $post->url_thumbnail = 'img/default.jpg';
+            $post->save();
+        }
+        else
+        {
+            $request->hasFile('url_thumbnail');
+            $ext = $request->url_thumbnail->extension();
+            $linkName = str_random(10) . '.' . $ext;
+            $request->url_thumbnail->storeAs('images', $linkName );
+            $post->url_thumbnail = 'img/' . $linkName;
+            $request->url_thumbnail->move(public_path('img'), $linkName);            
+            $post->save();
+        }
         
         return redirect()->route('posts.index')->with('message', 'Mise à jour effectuée !');
     }

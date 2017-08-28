@@ -21,7 +21,7 @@
 	                    <a href="{{ url('posts', $post->id) }}">Lire la suite</a>
 	                </div>
 
-	                <img src="{{url($post->url_thumbnail)}}" alt="">
+	                <img src="{{ URL::asset($post->url_thumbnail) }}" alt="">
 	            </div>
 
 			@empty
