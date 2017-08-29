@@ -11,6 +11,11 @@
         color:#666666;
         width:100%;
     }
+    span {
+        font-size:14px;
+        color:#D96459;
+        font-weight:300;
+    }
 /* HEADER */
     header {
         width:90%;
@@ -152,6 +157,7 @@
     .post-content span {
         font-size:12px;
         font-style:italic;
+        color:#666666;
     }
     .post-content p {
         font-size:14px;
@@ -287,6 +293,7 @@
     }
     .single-content span {
         font-size:12px;
+        color:#666666;
     }
     .single-content p {
         font-size:14px;
@@ -316,6 +323,7 @@
     }
     .all-comments .comment h4 span {
         font-size:12px;
+        color:#666666;
     }
     .all-comments .comment p {
         font-size:14px;

@@ -7,11 +7,6 @@
     @if (count($errors) > 0)
     <div class="alert alert-danger">
         <p>Une erreure est survenue dans le formulaire</p>
-        <ul>
-            @foreach($errors->all() as $message)
-            <li>{{$message}}</li>
-            @endforeach
-        </ul>
     </div>
     @endif
 
@@ -24,6 +19,9 @@
         <div class="row">
             <label for="title">Titre</label>
             <input placeholder="Titre" id="title" type="text" class="validate" name="title">
+            @if($errors->has('title')) 
+                <span>{{$errors->first('title')}}</span>
+            @endif
         </div>
 
         <div class="file-field input-field">
@@ -37,13 +35,19 @@
         </div>
 
         <div class="row">
-          <label for="abstract">Extrait</label>
-          <textarea placeholder="Extrait" id="textarea1" class="materialize-textarea" name="abstract"></textarea>
+            <label for="abstract">Extrait</label>
+            <textarea placeholder="Extrait" id="textarea1" class="materialize-textarea" name="abstract"></textarea>
+            @if($errors->has('abstract')) 
+                <span>{{$errors->first('abstract')}}</span>
+            @endif
         </div>
 
         <div class="row">
-          <label for="content">Texte</label>
-          <textarea placeholder="Texte" id="text" class="materialize-textarea" name="content"></textarea>
+            <label for="content">Texte</label>
+            <textarea placeholder="Texte" id="text" class="materialize-textarea" name="content"></textarea>
+            @if($errors->has('content')) 
+                <span>{{$errors->first('content')}}</span>
+            @endif
         </div>
 
         <div class="input-field col s12">

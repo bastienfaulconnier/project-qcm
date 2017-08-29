@@ -21,19 +21,19 @@
                     <div class="form-input">
                         <input type="hidden" name="post_id" value="{{$post->id}}">
                         <input type="text" name="name" placeholder="Pseudo">
+                        @if($errors->has('name')) 
+	                        <span>{{$errors->first('name')}}</span>
+	                    @endif
                     </div>
     
                     <div class="form-input">
                         <input type="text" name="content" placeholder="Message...">
+						@if($errors->has('content')) <span>{{$errors->first('content')}}
+	                        </span>
+	                    @endif
                     </div>
     
                     <input type="submit" name="action" value="Envoyer">
-                    @if($errors->has('name')) 
-                        <span>{{$errors->first('name')}}</span>
-                    @endif
-                    @if($errors->has('content')) <span>{{$errors->first('content')}}
-                        </span>
-                    @endif
                 </form>
 
                 <div class="all-comments">

@@ -37,8 +37,8 @@ class ChoiceRequest extends FormRequest
     public function messages()
     {
         return [
-            'required' => 'Ce champ est obligatoire.',
-            'in'       => 'Choisir une réponse.'
+            'required' => 'Ce champ est obligatoire',
+            'in'       => 'Choisir une réponse'
         ];
     }
 }

@@ -8,6 +8,7 @@ use App\Post;
 use App\Comment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
 use App\Repositories\PostRepository;
 
 class FrontController extends Controller
@@ -16,7 +17,11 @@ class FrontController extends Controller
         
     }
 
-    //
+    /**
+     * Display a listing some resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(PostRepository $postrepository){
         $posts = $postrepository->getPostSortByStatusAndDateWithPaginate(3);
         $current = Carbon::now();
@@ -24,25 +29,37 @@ class FrontController extends Controller
         return view('front.home', compact('posts', 'current'));
     }
 
+    /**
+     * Display a listing of all resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function showAllPosts() {
-        /* Affiche les articles */
         $posts = Post::where('status', '=', 'published')->orderBy('created_at', 'desc')->get();
         
         return view('front.posts', compact('posts'));
     }
 
+    /**
+     * Show a post.
+     *
+     * @param  int $i
+     * @return \Illuminate\Http\Response
+     */
     public function showPost(int $id) {
-
-        /* Affiche l'article sélectionné */
         $post = Post::findOrFail($id);
         $comments = Comment::where('post_id', $post->id)->where('status', 'published')->orderBy('created_at', 'desc')->get();
 
         return view('front.single', compact('post', 'comments'));
     }
 
-    public function sendComment(Request $request) {
-
-        /* Créer un commentaire */
+    /**
+     * Send a comment to the administrator.
+     * 
+     * @param  CommentRequest $request
+     * @return A front view comment.blade.php
+     */
+    public function sendComment(CommentRequest $request) {
         $comment = Comment::create([
             'name'    => $request->name,
             'content' => $request->content,
@@ -52,17 +69,14 @@ class FrontController extends Controller
         return view('front.comment', compact('comment'));
     }
 
-    
-    public function showContact() {
-        return view('front.contact');
-    }
-
+    /**
+     * Call the LegalNotice
+     * 
+     * @return View mentionslegales.blade.php
+     */
     public function showLegalNotice() {
-        return view('front.legalnotice');
-    }
 
-    public function showLycee() {
-        return view('front.lycee');
+        return view('front.legalnotice');
     }
     
 }

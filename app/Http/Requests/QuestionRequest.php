@@ -26,7 +26,8 @@ class QuestionRequest extends FormRequest
         return [
             'title'         => 'required',
             'class_level'   => 'required',
-            'number_choice' => 'required|numeric|between:1,20'
+            'number_choice' => 'required|numeric|between:1,20',
+            'status'        => 'in:published,unpublished'
         ];
     }
 
@@ -37,8 +38,8 @@ class QuestionRequest extends FormRequest
      */
     public function messages() {
         return [
-            'required' => 'Ce champ est obligatoire.',
-            'between'  => 'Rentrer un nombre de question entre 1 et 20.'
+            'required' => 'Ce champ est obligatoire',
+            'between'  => 'Rentrer un nombre de question entre 1 et 20'
         ];
     }
 }

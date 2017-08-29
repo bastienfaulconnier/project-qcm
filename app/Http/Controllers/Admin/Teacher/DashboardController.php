@@ -12,8 +12,13 @@ use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
+	/**
+	 * Call the Teacher back dashboard
+	 * 
+	 * @param  PostRepository $postrepository ==> for the $posts
+	 * @return the view of dashboard.blade.php
+	 */
     public function index(PostRepository $postrepository){
-        /* Affichage des 5 articles et des 5 QCM les plus récents en home du back professeurs  */
        		$posts = $postrepository->getPostSortByStatusAndDateWithPaginate(5);
             $questions = Question::where('status', '=', 'published')->orderBy('created_at', 'desc')->limit(5)->get();
     
