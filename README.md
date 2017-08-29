@@ -1,6 +1,6 @@
 ## project-qcm
 
-Project de fin d'année de la Licence Professionnelle Développeur Multimédia de L'École Multimédia.
+Projet de fin d'année de la Licence Professionnelle Développeur Multimédia de L'École Multimédia.
 
 
 Un lycée de maths souhaite un site pouvant créer des articles ainsi que des QCM.
