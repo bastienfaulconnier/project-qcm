@@ -9,7 +9,7 @@
 	    </div>
 	@endif
 
-	<form class="col s8" action="{{route('questions.store')}}" method="post" enctype="multipart/form-data">
+	<form class="col s8" action="{{route('questions.store')}}" method="post" enctype="multipart/form-data" novalidate>
 		{{csrf_field()}}
 		
 		<h4>{{$question->title}}</h4>
@@ -22,7 +22,9 @@
 				<div class="input-field col s6">
 					<input name="content[]" value="{{old('content')}}" type="text" class="validate" placeholder="Question" required>
 					<label class="active" for="content-{{$i}}">Question</label>
-					@if($errors->has('content')) <span>{{$errors->first('content')}}</span>@endif
+					@if($errors->has('content')) 
+						<span>{{$errors->first('content')}}</span>
+					@endif
 				</div>
 
 				<p>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class ChoiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,8 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required',
-            'abstract'      => 'required',
-            'content'       => 'required',
-            'url_thumbnail' => 'image|max:3000',            
-            'status'        => 'in:published,unpublished'
+            'content' => 'required',
+            'status'  => 'in:yes,no'
         ];
     }
 
@@ -37,9 +34,11 @@ class PostRequest extends FormRequest
      *
      * @return array
      */
-    public function messages() {
+    public function messages()
+    {
         return [
-            'required' => 'Ce champ est obligatoire.'
+            'required' => 'Ce champ est obligatoire.',
+            'in'       => 'Choisir une réponse.'
         ];
     }
 }

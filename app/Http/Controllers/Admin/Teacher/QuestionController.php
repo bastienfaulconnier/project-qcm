@@ -6,6 +6,7 @@ use App\User;
 use App\Choice;
 use App\Question;
 use Illuminate\Http\Request;
+use App\Http\Requests\ChoiceRequest;
 use App\Http\Requests\QuestionRequest;
 use App\Http\Controllers\Controller;
 
@@ -58,7 +59,7 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ChoiceRequest $request)
     {
         for($i = 0; $i < $request->number; $i++) {
             $choice = Choice::create([
