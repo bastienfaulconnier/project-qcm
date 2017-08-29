@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('date', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view('back.teacher.posts.posts', compact('posts'));
     }
@@ -90,14 +90,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
         $post = Post::findOrFail($id);
         $post->title = $request->title;
         $post->abstract = $request->abstract;
         $post->content = $request->content;
         $post->url_thumbnail = $request->url_thumbnail;
-        $post->status = $post->status;
+        $post->status = $request->status;
         $post->save();
 
         if ($post->url_thumbnail == null) {
