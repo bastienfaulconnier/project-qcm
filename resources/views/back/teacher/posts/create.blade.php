@@ -44,17 +44,6 @@
           <textarea placeholder="Texte" id="text" class="materialize-textarea" name="content"></textarea>
         </div>
 
-        {{--  <div class="row">
-            <p>
-                <input type="radio" id="check-yes" name="status" value="published">
-                <label for="check-yes">Published</label>
-            </p>
-            <p>
-                <input type="radio" id="check-no" name="status" value="unpublished">
-                <label for="check-no">Unpublish</label>
-            </p>
-        </div>  --}}
-
         <div class="input-field col s12">
             <select name="status" id="statusform">
                 <option value="unpublished">Non publié</option>

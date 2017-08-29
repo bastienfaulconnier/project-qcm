@@ -2,13 +2,13 @@
 
 @section('content')
 
-<h2>Liste des articles</h2>
+<h4>Liste des articles</h4>
 
-<div class="addpost">
-    <a href="{{ route('posts.create')}}" class="waves-effect waves-light btn">Ajouter un article</a>
+<div class="addpost ">
+    <a href="{{ route('posts.create')}}" class="waves-effect waves-light btn green darken-4">Ajouter un article</a>
 </div>
 
-<table class="centered responsive-table">
+<table class="responsive-table">
         <thead>
           <tr>
               <th>Titre</th>

@@ -1,12 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
-	<h4>Voici les QCM</h4>
+	<h4>Listes des QCM</h4>
 
-	<table style="width:70%;">
+	<table class="responsive-table">
         <thead>
           <tr>
               <th>Nom du QCM</th>
+              <th>Score</th>
+              <th>Action</th>
           </tr>
         </thead>
 
@@ -21,7 +23,7 @@
 					<td><a class="waves-effect waves-light btn grey" disable>Déjà fait !</a></td>
 				@else
 					<td>0</td>
-					<td><a href="{{route('student/qcm/doing', $question->id)}}" class="waves-effect waves-light btn">Faire le QCM</a></td>
+					<td><a href="{{route('student/qcm/doing', $question->id)}}" class="waves-effect waves-light btn green darken-4">Faire le QCM</a></td>
 				@endif
 			</tr>
         @empty

@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m9">
       <div class="card green darken-4">
         <div class="card-content white-text">
           <span class="card-title">Derniers articles</span>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m9">
       <div class="card green darken-4">
         <div class="card-content white-text">
           <span class="card-title">Derniers QCM</span>

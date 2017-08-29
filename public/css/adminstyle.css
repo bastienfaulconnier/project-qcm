@@ -2,20 +2,20 @@ header, body, footer {
     padding-left: 300px;
 }
 
-body {
-    background-color:#c8e6c9 ;
-}
-
-nav {
-    background-color: #1b5e20 ; 
-}
-
 .content {
     padding: 15px;
 }
 
 .user-view p {
     color:white;
+}
+
+.card-action a, .card-title {
+    color: #c8e6c9 !important;
+}
+
+.card-content a p {
+    color: #26a69a !important;
 }
 
 /* Flash */

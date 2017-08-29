@@ -20,9 +20,9 @@
 	
 </head>
 
-<body>
+<body class="green lighten-4">
 	<div id="wrap" style="width:100%; margin:0 auto; padding:0;">
-		<nav>
+		<nav class="green darken-4">
 		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul id="nav-mobile" class="right">
 				<li>

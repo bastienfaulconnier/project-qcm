@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-	<h4>Les commentaires</h4>
+	<h4>Liste des commentaires</h4>
 
-	<table style="width:70%;">
+	<table class="responsive-table">
         <thead>
           <tr>
               <th>Nom article</th>
@@ -31,7 +31,7 @@
 							{{csrf_field()}}
 							{{method_field('PUT')}}
 
-							<button type="submit" class="waves-effect waves-light btn" name="status" value="published">Publier</button>
+							<button type="submit" class="waves-effect green darken-4 btn" name="status" value="published">Publier</button>
 						</form>
 					</td>
 				@else
@@ -45,7 +45,7 @@
 						{{csrf_field()}}
 						{{method_field('DELETE')}}
 
-						<button type="submit" class="waves-effect waves-light btn"><i class="material-icons">clear</i></button>
+						<button type="submit" class="waves-effect waves-light btn red modal-trigger"><i class="material-icons">clear</i></button>
 					</form>
 				</td>
 			</tr>
@@ -56,4 +56,15 @@
         @endforelse
         </tbody>
     </table>
+
+	<div id="modal1" class="modal red white-text">
+		<div class="modal-content">
+			<h4>Supprimer</h4>
+			<p>Voulez-vous vraiment supprimer ce QCM ?</p>
+		</div>
+		<div class="modal-footer red">
+			<a id="agree-delete" class="waves-effect waves-green btn-flat white-text">OUI</a>
+			<a id="denie-delete" class="modal-action modal-close waves-effect waves-green btn-flat white-text">NON</a>
+		</div>
+	</div>
 @endsection

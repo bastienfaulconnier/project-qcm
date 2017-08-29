@@ -1,16 +1,19 @@
 @extends('layouts.admin')
 
 @section('content')
-	<h4>Voici les QCM</h4>
+	<h4>Listes des QCM</h4>
 
 	<div class="add-question">
-		<a href="{{route('questions.create')}}" class="waves-effect light-green lighten-2 btn">Ajouter un QCM</a>
+		<a href="{{route('questions.create')}}" class="waves-effect green darken-4 btn">Ajouter un QCM</a>
 	</div>
 
-	<table style="width:70%;">
+
+	<table class="responsive-table">
         <thead>
           <tr>
-              <th>Nom du QCM</th>
+		  	  <th>Nom</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>			  
           </tr>
         </thead>
 
@@ -18,14 +21,14 @@
         @forelse($questions as $question)
 			<tr>
 				<td>{{$question->title}}</td>
-				<td><a href="{{route('questions.edit', $question->id)}}" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">mode_edit</i></a></td>
+				<td><a href="{{route('questions.edit', $question->id)}}" class="waves-effect waves-light btn"><i class="material-icons">mode_edit</i></a></td>
 				
 				<td>
 					<form class="delete-form" action="{{route('questions.destroy', $question->id)}}" method="post">
 						{{csrf_field()}}
 						{{method_field('DELETE')}}
 
-						<button type="submit" class="btn-floating btn-large waves-effect waves-light red modal-trigger"><i class="material-icons">clear</i></button>
+						<button type="submit" class="waves-effect waves-light btn red modal-trigger"><i class="material-icons">clear</i></button>
 					</form>
 				</td>
 			</tr>

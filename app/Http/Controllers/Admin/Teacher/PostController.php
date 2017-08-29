@@ -41,6 +41,7 @@ class PostController extends Controller
     {        
         $post = Post::create($request->all());
 
+        /* Si aucune image choisie, alors image par défault */
         if ($post->url_thumbnail == null) {
             $post->url_thumbnail = 'img/default.jpg';
             $post->save();
