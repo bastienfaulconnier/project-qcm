@@ -29,4 +29,16 @@ class QuestionRequest extends FormRequest
             'number_choice' => 'required|numeric|between:1,20'
         ];
     }
+
+    /**
+     * Send a message with the validation.
+     *
+     * @return array
+     */
+    public function messages() {
+        return [
+            'required' => 'Ce champ est obligatoire.',
+            'between'  => 'Rentrer un nombre de question entre 1 et 20.'
+        ];
+    }
 }

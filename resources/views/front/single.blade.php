@@ -11,7 +11,7 @@
 
 			<a href="{{ url('posts') }}">Renvenir aux actualités >></a>
 
-			<form action="{{url('posts/comment')}}" method="post">
+			<form action="{{url('posts/comment')}}" method="post" novalidate>
 				{{ csrf_field() }}
 
 				<input type="hidden" name="post_id" value="{{$post->id}}">
@@ -20,6 +20,12 @@
 				<input type="text" name="content" class="twelve columns" placeholder="Message...">
 
 				<input type="submit" name="action" value="Envoyer">
+				@if($errors->has('name')) 
+	                <span>{{$errors->first('name')}}</span>
+	            @endif
+	            @if($errors->has('content')) <span>{{$errors->first('content')}}
+	                </span>
+	            @endif
 			</form>
 
 			@forelse($comments as $comment)

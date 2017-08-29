@@ -14,11 +14,10 @@ class LoginController extends Controller
 
     	if($request->isMethod('post')) {
     		$this->validate($request, [
-    				'username'		=> 'bail|required',
+    				'username'	=> 'bail|required',
     				'password'  => 'required|between:3,10',
-    				'remember'  => 'in:remember'
     			], [
-    				'username.required' 	=> 'Username obligatoire',
+    				'username.required' => 'Username obligatoire',
     				'password.between'  => 'le mot de passe doit être compris entre 3 à 10 caractères',
     				'password.required' => 'le mot de passe est obligatoire'
     		]);
