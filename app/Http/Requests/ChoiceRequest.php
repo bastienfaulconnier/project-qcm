@@ -24,8 +24,8 @@ class ChoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'content' => 'required',
-            'status'  => 'in:yes,no'
+            'content.*' => 'required',
+            'status.*'  => 'in:yes,no'
         ];
     }
 

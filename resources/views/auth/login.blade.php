@@ -1,34 +1,33 @@
 @extends('layouts.master')
 
 @section('content')
+    <div class="connexion-part parts">
+        <h2>Connexion</h2>
+        <p>Connectez-vous à votre espace.</p>
+    </div>
 
-    <section id="contact" class="connexion">
-        <div class="head-section eight columns">
-            <h3>Connexion</h3>
-            <hr>
-            <span>Connectez-vous à votre espace.</span>  
+    <form action="{{url('login')}}" method="post" novalidate>
+        {{csrf_field()}}
+        
+        <div class="form-input">
+            <input type="text" value="{{old('username')}}" name="username" required placeholder="Username">
         </div>
 
-        <form class="eight columns" action="{{url('login')}}" method="POST" novalidate>
-            {{ csrf_field() }}
+        <div class="form-input">
+            <input type="password" name="password" required placeholder="Password">
+        </div>
 
-            <input type="text" value="{{old('username')}}" name="username" class="six columns" required placeholder="Username">
-            
+        <input type="submit" name="action" value="connexion">
 
-            <input type="password" name="password" class="six columns" required placeholder="Password">
-
-            <input type="submit" name="action" value="connexion">
-
-            @if($errors->has('username')) 
-                <span>{{$errors->first('username')}}</span>
-            @endif
-            @if($errors->has('password')) <span>{{$errors->first('password')}}
-                </span>
-            @endif
-            @include('partials.flash')
-            
-        </form>
-
-    <section id="contact" class="connexion">
-
+        
+        @if($errors->has('username')) 
+            <span>{{$errors->first('username')}}</span>
+        @endif
+        @if($errors->has('password')) <span>{{$errors->first('password')}}
+            </span>
+        @endif
+        @include('partials.flash')
+    </form>
+</section>
 @endsection
+

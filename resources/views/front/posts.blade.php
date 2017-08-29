@@ -2,36 +2,30 @@
 
 @section('content')
 	
-	<section class="last-posts">
-		<div class="all-posts eight columns">
-	        <div class="head-section">
-	            <h3>Toutes les actus</h3>
-	            <hr>
-	            <span>Toutes les actualités disponibles.</span>
-	        </div>
+<div class="posts-part">
+    <div class="columns">
+        @forelse($posts as $post)
+            <div class="post">
+                <div class="post-img">
+                    <img src="{{URL::asset($post->url_thumbnail)}}" alt="">
+                </div>
+                <div class="post-content">
+                    <h3>{{$post->title}}</h3>
+                    <span>{{$post->created_at->format('d/m/Y')}}</span>
+                    <p>{{ $post->abstract }}</p>
+                    <a href="{{url('posts', $post->id)}}">Lire la suite</a>
+                </div>
+            </div>
+        @empty
+            <p>Pas d'article enregistré.</p>
+        @endforelse
+    </div>
+</div>
+</section>
 
-			@forelse ($posts as $post)
-
-				<div class="post six columns">
-	                <div class="post-content">
-	                    <h2>{{ $post->title }}</h2>
-	                    <p>
-	                        {{ $post->abstract }}
-	                    </p>
-	                    <p>{{ $post->created_at->format('d/m/Y') }}</p>
-	                    <a href="{{ url('posts', $post->id) }}">Lire la suite</a>
-	                </div>
-
-	                <img src="{{ URL::asset($post->url_thumbnail) }}" alt="">
-	            </div>
-
-			@empty
-				<h5>Il n'y a pas de post pour le moment. Merci.</h5>
-			@endforelse
-	    </div>
-
-	    @include('partials.front.sidebar')
-	</section>
+<section class="sidebar-content">
+    @include('partials.front.sidebar')
+</section>
 
 @endsection
 

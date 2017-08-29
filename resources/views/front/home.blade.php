@@ -1,85 +1,78 @@
 @extends('layouts.master')
 
 @section('content')
-        <div class="content">
-
         @forelse($posts as $post)
-            @if($loop->first)
-
-                <section class="main-post">
-                    <img src="{{ URL::asset($post->url_thumbnail) }}" alt="">
-
-                    <div class="main-content">
-                        <h2>{{ $post->title }}</h2>
-                        <p>{{ $post->abstract }}</p>
-                        <p>{{ $post->created_at->format('d/m/Y') }}</p>
-                        <a href="{{url('posts', $post->id)}}">Lire la suite</a>        
-                    </div>  
-                </section>
-                
-                <section class="last-posts">
-                    <div class="all-posts eight columns">
-                        <div class="head-section">
-                            <h3>Dernières Actus</h3>
-                            <hr>
-                            <span>Toutes les dernières actualités dans le monde des mathématiques.</span>
-                        </div>
-
-            @else
-
-                <div class="post six columns">
-                    <div class="post-content">
-                        <h2>{{ $post->title }}</h2>
-                        <p>
-                            {{ $post->abstract }}
-                        </p>
-                        <p>{{ $post->created_at->format('d/m/Y') }}</p>
-                        <a href="{{url('posts', $post->id)}}">Lire la suite</a>
-                    </div>
-
-                    <img src="{{ URL::asset($post->url_thumbnail) }}" alt="">
-                </div>
-            @endif
-        @empty
-            <h5>Pas de post enregistré.</h5>
-        @endforelse
-
-                <a href="{{ url('posts') }}">Voir toutes les actus >></a>
+    @if($loop->first)
+        <div class="main-post">
+            <div class="post-img">
+                <img src="{{URL::asset($post->url_thumbnail)}}" alt="">
             </div>
-
-            @include('partials.front.sidebar')
-        </section>
-
-        <section id="lycee">
-            <div class="head-section eight columns">
-                <h3>Le lycée</h3>
-                <hr>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at iaculis eros, in sagittis odio. Ut consequat tortor sed duiefficitur, vel posuere ipsum semper. Ut id lorem porttitor, laoreet augue quis, mollis sem. Nunc et est interdum, sagittis
-                justo id, volutpat mi. Sed enim risus, imperdiet eu lectus sit amet, consectetur placerat nisl. Nunc dapibus sagittis maximus. Fusce mattis scelerisque posuere. Proin fermentum arcu et tempus iaculis.</span>    
+            <div class="post-content">
+                <h3>{{$post->title}}</h3>
+                <span>{{$post->created_at->format('d/m/Y')}}</span>
+                <p>{{$post->abstract}}</p>
+                <a href="{{url('posts', $post->id)}}">Lire la suite</span></a>
             </div>
+        </div>
 
-            <img src="{{ URL::asset('img/fond-school.jpg') }}" alt="">
-        </section>
-
-        <section id="contact">
-            <div class="head-section eight columns">
-                <h3>Contact</h3>
-                <hr>
-                <span>Contactez nous.</span>  
+        <div class="posts-part">
+    @else
+        <div class="post">
+            <div class="post-img">
+                <img src="{{URL::asset($post->url_thumbnail)}}" alt="">
             </div>
+            <div class="post-content">
+                <h3>{{$post->title}}</h3>
+                <span>{{$post->created_at->format('d/m/Y')}}</span>
+                <p>{{$post->abstract}}</p>
+                <a href="{{url('posts', $post->id)}}">Lire la suite</a>
+            </div>
+        </div>
+    @endif
+@empty
+    <p>Pas d'article enregistré.</p>
+@endforelse
+</div>
 
-            <form class="eight columns" method="POST">
-				{{ csrf_field() }}
+<div id="lycee" class="lycee-part parts">
+    <hr>
+    <h2>Le lycée</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <div class="content-img">
+        <img src="img/try-6.jpg" alt="">
+    </div>
+</div>
 
-                <input type="text" name="prenom" placeholder="Prénom" class="six columns" required>
-                <input type="text" name="nom" placeholder="Nom" class="six columns" required>
-                <input type="email" name="email" placeholder="Email" class="twelve columns" required>
-                
-                <textarea name="message" class="twelve columns" placeholder="Message..."></textarea>
+<div id="contact" class="contact-part parts">
+    <hr>
+    <h2>Contact</h2>
+    <form method="post">
+        <div class="form-input">
+            <input type="text" name="prenom" placeholder="Prénom" required>
+        </div>
 
-                <input type="submit" value="envoyer">
-            </form>
-        </section>
+        <div class="form-input">
+            <input type="text" name="nom" placeholder="Nom" required>
+        </div>
+        
+        <div class="form-input" id="input-mail">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        
+        <div class="form-input" id="input-text">
+            <textarea name="message" placeholder="Message..."></textarea>
+        </div>
+
+        <input type="submit" value="Envoyer">
+    </form>
+</div>
+</section>
+
+<section class="sidebar-content">
+    @include('partials.front.sidebar')
+</section>
 @endsection
+
+
 
 
