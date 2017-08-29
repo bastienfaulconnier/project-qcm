@@ -48,7 +48,7 @@ class PostController extends Controller
         }
         else
         {
-            /* Si une imae choisie, alors image renommé et déplacé dans le dossier image */
+            /* Si une image choisie, alors image renommée et déplacée dans le dossier image */
             $request->hasFile('url_thumbnail');
             $ext = $request->url_thumbnail->extension();
             $linkName = str_random(10) . '.' . $ext;

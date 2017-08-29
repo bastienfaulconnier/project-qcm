@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller
 {
     public function index(PostRepository $postrepository){
+        /* Affichage des 5 articles et des 5 QCM les plus récents en home du back professeurs  */
        		$posts = $postrepository->getPostSortByStatusAndDateWithPaginate(5);
             $questions = Question::where('status', '=', 'published')->orderBy('created_at', 'desc')->limit(5)->get();
     

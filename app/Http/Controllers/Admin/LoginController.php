@@ -10,8 +10,11 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     public function login(Request $request) {
+
+		/* Si l'utilisateur est connecté, redirection vers la home */
         if(auth()->check()) {return redirect()->route('home');}
 
+		/* Vérification des données envoyées par l'utilisateur */
     	if($request->isMethod('post')) {
     		$this->validate($request, [
     				'username'	=> 'bail|required',
@@ -22,7 +25,7 @@ class LoginController extends Controller
     				'password.required' => 'le mot de passe est obligatoire'
     		]);
 
-
+			/* Vérifié vers quelle page envoyer l'utilisateur via les logins de connexion */
     		if(Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
 				session()->flash('message', 'Bienvenue dans le dashboard');
 
@@ -48,6 +51,7 @@ class LoginController extends Controller
     	return view('auth.login');
     }
 
+	/* Déconnexion */
     public function logout() {
         if(auth()->check()) {
         	auth()->logout();

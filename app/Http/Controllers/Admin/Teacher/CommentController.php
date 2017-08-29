@@ -44,6 +44,7 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
+        /* Supprime le commentaire choisie */
         $comment = Comment::findOrFail($id)->delete();
 
         return redirect()->route('teacher/comments');
