@@ -2,6 +2,7 @@
 
 @section('content')
 
+{{--  Affichage erreur  --}}
 <div class="row">
     @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -16,6 +17,7 @@
 
     <h3>Modifier l'article</h3>
 
+    {{--  Formulaire édition article  --}}
     <form class="col s12 postform" action="{{route('posts.update', $post->id)}}" method="post" enctype="multipart/form-data" >
         {{csrf_field()}}
         {{ method_field('PUT') }}
@@ -47,8 +49,8 @@
 
         <div class="input-field col s12">
             <select name="status" id="statusform">
-                <option value="unpublished">Non publié</option>
                 <option value="published">Publié</option>
+                <option value="unpublished">Non publié</option>
             </select>
             <label for="statusform" >Publication</label>
         </div>

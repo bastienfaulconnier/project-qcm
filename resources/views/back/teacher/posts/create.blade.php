@@ -2,6 +2,7 @@
 
 @section('content')
 
+{{--  Affichage erreur  --}}
 <div class="row">
     @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -16,6 +17,7 @@
 
     <h3>Ajouter un article</h3>
 
+    {{--  Formulaire création article  --}}
     <form class="col s12 postform" action="{{route('posts.store')}}" method="post" enctype="multipart/form-data" >
         {{csrf_field()}}
 
@@ -25,7 +27,7 @@
         </div>
 
         <div class="file-field input-field">
-            <div class="btn">
+            <div class="btn green darken-4">
                 <span>Image à la une</span>
                 <input name="url_thumbnail" type="file">
             </div>
@@ -46,15 +48,15 @@
 
         <div class="input-field col s12">
             <select name="status" id="statusform">
-                <option value="unpublished">Non publié</option>
                 <option value="published">Publié</option>
+                <option value="unpublished">Non publié</option>
             </select>
             <label for="statusform" >Publication</label>
         </div>
 
         <div class="row robot-marge">
             <div class="input-field col s12 ">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Créer
+                <button class="btn waves-effect waves-light green darken-4" type="submit" name="action">Créer
                     <i class="material-icons right">send</i>
                 </button>
             </div>
