@@ -28,7 +28,7 @@ class PostRequest extends FormRequest
             'abstract'      => 'required',
             'content'       => 'required',
             'url_thumbnail' => 'image|max:3000',            
-            'status'        => 'in:published'
+            'status'        => 'in:published,unpublished'
         ];
     }
 

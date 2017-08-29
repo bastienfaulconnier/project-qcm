@@ -1,3 +1,3 @@
 @if($flash = session('message'))
-    <span>{{$flash}}</span>
+    <div  class="flash"><span>{{$flash}}</span></div>
 @endif

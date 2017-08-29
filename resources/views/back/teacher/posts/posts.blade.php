@@ -12,8 +12,6 @@
         <thead>
           <tr>
               <th>Titre</th>
-              <th>Auteur</th>
-              <th>Commentaires</th>
               <th>Statut</th>
               <th>Editer</th>
               <th>Supprimer</th>
@@ -23,8 +21,6 @@
             @forelse($posts as $post)
             <tr>
                 <td>{{$post->title}}</td>
-                <td>{{--  {{$post->user? $post->user->username: 'aucun auteur'}}  --}}</td>
-                <td>0</td>
                 <td>{{$post->status}}</td>
                 <td><a href="{{ route('posts.edit', $post->id) }}" class="waves-effect waves-light btn"><i class="material-icons ">edit</i></a></td> 
                 <td>
