@@ -3,6 +3,7 @@
 @section('content')
 	<h4>Listes des QCM</h4>
 
+	{{--  Affichage des QCM  --}}
 	<table class="responsive-table">
         <thead>
           <tr>

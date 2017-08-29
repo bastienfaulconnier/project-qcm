@@ -2,6 +2,7 @@
 
 @section('content')
 
+  {{--  Affichage du bloc Article se trouvant en home  --}}
   <div class="row">
     <div class="col s12 m9">
       <div class="card green darken-4">
@@ -20,6 +21,7 @@
     </div>
   </div>
 
+  {{--  Affichage du bloc QCM se trouvant en home  --}}
   <div class="row">
     <div class="col s12 m9">
       <div class="card green darken-4">

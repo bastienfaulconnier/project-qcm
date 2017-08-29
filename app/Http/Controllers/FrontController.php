@@ -25,12 +25,15 @@ class FrontController extends Controller
     }
 
     public function showAllPosts() {
+        /* Affiche les articles */
         $posts = Post::where('status', '=', 'published')->orderBy('created_at', 'desc')->get();
         
         return view('front.posts', compact('posts'));
     }
 
     public function showPost(int $id) {
+
+        /* Affiche l'article sélectionné */
         $post = Post::findOrFail($id);
         $comments = Comment::where('post_id', $post->id)->where('status', 'published')->orderBy('created_at', 'desc')->get();
 
@@ -38,6 +41,8 @@ class FrontController extends Controller
     }
 
     public function sendComment(Request $request) {
+
+        /* Créer un commentaire */
         $comment = Comment::create([
             'name'    => $request->name,
             'content' => $request->content,

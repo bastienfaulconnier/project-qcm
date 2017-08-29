@@ -3,6 +3,7 @@
 @section('content')
 	<h4>Liste des commentaires</h4>
 
+	{{--  Table affichant les commentaires  --}}
 	<table class="responsive-table">
         <thead>
           <tr>
@@ -57,6 +58,7 @@
         </tbody>
     </table>
 
+	{{--  Fenêtre modale d'avertissement avant suppression  --}}
 	<div id="modal1" class="modal red white-text">
 		<div class="modal-content">
 			<h4>Supprimer</h4>

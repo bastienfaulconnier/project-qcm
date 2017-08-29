@@ -38,6 +38,7 @@
         </tbody>
       </table>
 
+    {{--  Fenêtre modale d'avertissement avant suppression  --}}
       <div id="modal1" class="modal red white-text">
 		<div class="modal-content">
 			<h4>Supprimer</h4>

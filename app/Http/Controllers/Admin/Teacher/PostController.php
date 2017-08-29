@@ -48,6 +48,7 @@ class PostController extends Controller
         }
         else
         {
+            /* Si une imae choisie, alors image renommé et déplacé dans le dossier image */
             $request->hasFile('url_thumbnail');
             $ext = $request->url_thumbnail->extension();
             $linkName = str_random(10) . '.' . $ext;
@@ -93,6 +94,7 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, $id)
     {
+        /* Modifie les données */
         $post = Post::findOrFail($id);
         $post->title = $request->title;
         $post->abstract = $request->abstract;
@@ -126,8 +128,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-
+    {   
+        /* Supprime l'image séléctionnée */
         $post = Post::find($id);
         $post->delete();
 
