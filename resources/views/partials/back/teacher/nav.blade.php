@@ -9,7 +9,6 @@
         <li><a class="waves-effect" href="{{url('teacher/posts')}}">Articles</a></li>
         <li><a class="waves-effect" href="{{url('teacher/questions')}}">QCM</a></li>				
         <li><a class="waves-effect" href="{{url('teacher/comments')}}">Commentaires</a></li>			
-        <li><a class="waves-effect" href="#!">Élèves</a></li>				
     </ul>
     
 </div>
